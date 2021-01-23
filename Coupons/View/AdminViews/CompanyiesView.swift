@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct CompanyiesView: View {
+    @EnvironmentObject var admin: AdminObservableObject
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(admin.companies) { company in
+                    CompanyItemView(company: company)
+                }
+            }.navigationTitle("Companies")
+            .listStyle(GroupedListStyle())
+        }
     }
 }
 
