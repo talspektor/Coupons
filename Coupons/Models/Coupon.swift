@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Coupon: Codable, Equatable, Identifiable, Hashable {
+struct Coupon: Codable, Equatable, Identifiable, Hashable, BaseModel {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

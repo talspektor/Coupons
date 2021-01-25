@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Customer: Codable, Identifiable, Equatable {
+struct Customer: Codable, Identifiable, Equatable, BaseModel {
     let id: UUID
     let firstName: String
     let lastName: String

@@ -29,6 +29,28 @@
 		43283FC225BB0EF8002DDD08 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43283FBD25BB0EF8002DDD08 /* Company.swift */; };
 		43283FC325BB0EF8002DDD08 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43283FBE25BB0EF8002DDD08 /* Coupon.swift */; };
 		43283FC425BB0EF8002DDD08 /* CouponsByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43283FBF25BB0EF8002DDD08 /* CouponsByCategory.swift */; };
+		43A2E7B425BE89A200B531DF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7B325BE89A200B531DF /* NetworkManager.swift */; };
+		43A2E7BD25BE8CBB00B531DF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */; };
+		43A2E7C225BE8DD500B531DF /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */; };
+		43A2E7C525BE8E7B00B531DF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C425BE8E7B00B531DF /* NetworkError.swift */; };
+		43A2E7C925BE8F1D00B531DF /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C825BE8F1D00B531DF /* URLParameterEncoder.swift */; };
+		43A2E7CD25BE91B200B531DF /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7CC25BE91B200B531DF /* JSONParameterEncoder.swift */; };
+		43A2E7D225BE92E500B531DF /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7D125BE92E500B531DF /* NetworkRouter.swift */; };
+		43A2E7D625BE941F00B531DF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7D525BE941F00B531DF /* Router.swift */; };
+		43A2E7E225BEA1B500B531DF /* AdminEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7E125BEA1B500B531DF /* AdminEndPoint.swift */; };
+		43A2E7E725BEAB5000B531DF /* CustomerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7E625BEAB5000B531DF /* CustomerServise.swift */; };
+		43A2E7ED25BEAD9900B531DF /* AdminService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7EC25BEAD9900B531DF /* AdminService.swift */; };
+		43A2E7F125BEAF6200B531DF /* CompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7F025BEAF6200B531DF /* CompanyService.swift */; };
+		43A2E7F425BEB5FA00B531DF /* AdminServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7F325BEB5FA00B531DF /* AdminServiceImp.swift */; };
+		43A2E7FC25BEC47600B531DF /* AdminClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7FB25BEC47600B531DF /* AdminClient.swift */; };
+		43A2E80A25BEC71700B531DF /* CustomerEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E80925BEC71700B531DF /* CustomerEndPoint.swift */; };
+		43A2E81325BED0C800B531DF /* CustomerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E81225BED0C800B531DF /* CustomerClient.swift */; };
+		43A2E81625BED0D200B531DF /* CompanyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E81525BED0D200B531DF /* CompanyClient.swift */; };
+		43A2E81C25BEEB3C00B531DF /* CustomerServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E81B25BEEB3C00B531DF /* CustomerServiceImp.swift */; };
+		43A2E81F25BEEBE300B531DF /* CompanyEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E81E25BEEBE300B531DF /* CompanyEndPoint.swift */; };
+		43A2E82225BEF02D00B531DF /* CompanyServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E82125BEF02D00B531DF /* CompanyServiceImp.swift */; };
+		43A2E82C25BEF90600B531DF /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E82B25BEF90600B531DF /* APIResponse.swift */; };
+		43A2E83125BEFE4300B531DF /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E83025BEFE4300B531DF /* BaseModel.swift */; };
 		43B0A6AB25BC7A7700C3AC08 /* CustomerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B0A6AA25BC7A7700C3AC08 /* CustomerDetailsView.swift */; };
 		43B0A6AF25BC7A9200C3AC08 /* CompanyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B0A6AE25BC7A9200C3AC08 /* CompanyDetailsView.swift */; };
 		43B0A6B225BC7B8100C3AC08 /* CompanyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B0A6B125BC7B8100C3AC08 /* CompanyItemView.swift */; };
@@ -59,6 +81,28 @@
 		43283FBD25BB0EF8002DDD08 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		43283FBE25BB0EF8002DDD08 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		43283FBF25BB0EF8002DDD08 /* CouponsByCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponsByCategory.swift; sourceTree = "<group>"; };
+		43A2E7B325BE89A200B531DF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		43A2E7C425BE8E7B00B531DF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		43A2E7C825BE8F1D00B531DF /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		43A2E7CC25BE91B200B531DF /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		43A2E7D125BE92E500B531DF /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		43A2E7D525BE941F00B531DF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		43A2E7E125BEA1B500B531DF /* AdminEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEndPoint.swift; sourceTree = "<group>"; };
+		43A2E7E625BEAB5000B531DF /* CustomerServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServise.swift; sourceTree = "<group>"; };
+		43A2E7EC25BEAD9900B531DF /* AdminService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminService.swift; sourceTree = "<group>"; };
+		43A2E7F025BEAF6200B531DF /* CompanyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyService.swift; sourceTree = "<group>"; };
+		43A2E7F325BEB5FA00B531DF /* AdminServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminServiceImp.swift; sourceTree = "<group>"; };
+		43A2E7FB25BEC47600B531DF /* AdminClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClient.swift; sourceTree = "<group>"; };
+		43A2E80925BEC71700B531DF /* CustomerEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerEndPoint.swift; sourceTree = "<group>"; };
+		43A2E81225BED0C800B531DF /* CustomerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerClient.swift; sourceTree = "<group>"; };
+		43A2E81525BED0D200B531DF /* CompanyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyClient.swift; sourceTree = "<group>"; };
+		43A2E81B25BEEB3C00B531DF /* CustomerServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceImp.swift; sourceTree = "<group>"; };
+		43A2E81E25BEEBE300B531DF /* CompanyEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyEndPoint.swift; sourceTree = "<group>"; };
+		43A2E82125BEF02D00B531DF /* CompanyServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyServiceImp.swift; sourceTree = "<group>"; };
+		43A2E82B25BEF90600B531DF /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		43A2E83025BEFE4300B531DF /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		43B0A6AA25BC7A7700C3AC08 /* CustomerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsView.swift; sourceTree = "<group>"; };
 		43B0A6AE25BC7A9200C3AC08 /* CompanyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsView.swift; sourceTree = "<group>"; };
 		43B0A6B125BC7B8100C3AC08 /* CompanyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyItemView.swift; sourceTree = "<group>"; };
@@ -94,6 +138,8 @@
 		43283F8225BB0DDB002DDD08 /* Coupons */ = {
 			isa = PBXGroup;
 			children = (
+				43A2E7B225BE898700B531DF /* Network */,
+				43A2E7E025BEA19C00B531DF /* API */,
 				43283F9325BB0E04002DDD08 /* App */,
 				43283F8525BB0DDB002DDD08 /* ContentView.swift */,
 				43283F9725BB0E4C002DDD08 /* OrderCouopon.swift */,
@@ -176,6 +222,7 @@
 				43283FBE25BB0EF8002DDD08 /* Coupon.swift */,
 				43283FBF25BB0EF8002DDD08 /* CouponsByCategory.swift */,
 				43283FBB25BB0EF8002DDD08 /* Customer.swift */,
+				43A2E83025BEFE4300B531DF /* BaseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +233,121 @@
 				43283F8725BB0DDC002DDD08 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		43A2E7B225BE898700B531DF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7D025BE92CB00B531DF /* Service */,
+				43A2E7CF25BE929700B531DF /* Manager */,
+				43A2E7C725BE8EFD00B531DF /* Encoding */,
+				43A2E7BF25BE8D4700B531DF /* EndPont */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		43A2E7BF25BE8D4700B531DF /* EndPont */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */,
+			);
+			path = EndPont;
+			sourceTree = "<group>";
+		};
+		43A2E7C725BE8EFD00B531DF /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7C425BE8E7B00B531DF /* NetworkError.swift */,
+				43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */,
+				43A2E7C825BE8F1D00B531DF /* URLParameterEncoder.swift */,
+				43A2E7CC25BE91B200B531DF /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		43A2E7CF25BE929700B531DF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7B325BE89A200B531DF /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		43A2E7D025BE92CB00B531DF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7D125BE92E500B531DF /* NetworkRouter.swift */,
+				43A2E7D525BE941F00B531DF /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		43A2E7E025BEA19C00B531DF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E82E25BEF91600B531DF /* Response */,
+				43A2E80025BEC4C200B531DF /* EndPiont */,
+				43A2E7FA25BEC46800B531DF /* Client */,
+				43A2E7E525BEAB3600B531DF /* Services */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		43A2E7E525BEAB3600B531DF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E81A25BEEB1700B531DF /* Implementations */,
+				43A2E81925BEEB0500B531DF /* protocols */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		43A2E7FA25BEC46800B531DF /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7FB25BEC47600B531DF /* AdminClient.swift */,
+				43A2E81225BED0C800B531DF /* CustomerClient.swift */,
+				43A2E81525BED0D200B531DF /* CompanyClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		43A2E80025BEC4C200B531DF /* EndPiont */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7E125BEA1B500B531DF /* AdminEndPoint.swift */,
+				43A2E80925BEC71700B531DF /* CustomerEndPoint.swift */,
+				43A2E81E25BEEBE300B531DF /* CompanyEndPoint.swift */,
+			);
+			path = EndPiont;
+			sourceTree = "<group>";
+		};
+		43A2E81925BEEB0500B531DF /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7E625BEAB5000B531DF /* CustomerServise.swift */,
+				43A2E7EC25BEAD9900B531DF /* AdminService.swift */,
+				43A2E7F025BEAF6200B531DF /* CompanyService.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		43A2E81A25BEEB1700B531DF /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E7F325BEB5FA00B531DF /* AdminServiceImp.swift */,
+				43A2E81B25BEEB3C00B531DF /* CustomerServiceImp.swift */,
+				43A2E82125BEF02D00B531DF /* CompanyServiceImp.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		43A2E82E25BEF91600B531DF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				43A2E82B25BEF90600B531DF /* APIResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,26 +420,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				43283F9825BB0E4C002DDD08 /* OrderCouopon.swift in Sources */,
+				43A2E7E225BEA1B500B531DF /* AdminEndPoint.swift in Sources */,
+				43A2E7C525BE8E7B00B531DF /* NetworkError.swift in Sources */,
 				43283FC325BB0EF8002DDD08 /* Coupon.swift in Sources */,
 				43283FAE25BB0E97002DDD08 /* CouponItemView.swift in Sources */,
+				43A2E82C25BEF90600B531DF /* APIResponse.swift in Sources */,
+				43A2E7C925BE8F1D00B531DF /* URLParameterEncoder.swift in Sources */,
+				43A2E81F25BEEBE300B531DF /* CompanyEndPoint.swift in Sources */,
 				43283F9E25BB0E60002DDD08 /* AdminObservableObject.swift in Sources */,
+				43A2E83125BEFE4300B531DF /* BaseModel.swift in Sources */,
+				43A2E7ED25BEAD9900B531DF /* AdminService.swift in Sources */,
+				43A2E81625BED0D200B531DF /* CompanyClient.swift in Sources */,
 				43283FAC25BB0E97002DDD08 /* CouponsForOrder.swift in Sources */,
 				43283FB825BB0EE7002DDD08 /* MockData.swift in Sources */,
+				43A2E7C225BE8DD500B531DF /* ParameterEncoder.swift in Sources */,
+				43A2E7E725BEAB5000B531DF /* CustomerServise.swift in Sources */,
+				43A2E7F425BEB5FA00B531DF /* AdminServiceImp.swift in Sources */,
 				43283F9525BB0E16002DDD08 /* AppDelegate.swift in Sources */,
 				43283F8625BB0DDB002DDD08 /* ContentView.swift in Sources */,
 				43283FAD25BB0E97002DDD08 /* MyCoupons.swift in Sources */,
 				43B0A6AF25BC7A9200C3AC08 /* CompanyDetailsView.swift in Sources */,
 				43283FB325BB0EC8002DDD08 /* CheckoutView.swift in Sources */,
+				43A2E7F125BEAF6200B531DF /* CompanyService.swift in Sources */,
+				43A2E7BD25BE8CBB00B531DF /* EndPoint.swift in Sources */,
 				43283F9B25BB0E57002DDD08 /* AppView.swift in Sources */,
+				43A2E7FC25BEC47600B531DF /* AdminClient.swift in Sources */,
+				43A2E7B425BE89A200B531DF /* NetworkManager.swift in Sources */,
 				43283FAB25BB0E97002DDD08 /* CouponDetail.swift in Sources */,
+				43A2E81325BED0C800B531DF /* CustomerClient.swift in Sources */,
 				43283FC225BB0EF8002DDD08 /* Company.swift in Sources */,
+				43A2E7CD25BE91B200B531DF /* JSONParameterEncoder.swift in Sources */,
 				43283FC125BB0EF8002DDD08 /* Category.swift in Sources */,
+				43A2E80A25BEC71700B531DF /* CustomerEndPoint.swift in Sources */,
+				43A2E7D625BE941F00B531DF /* Router.swift in Sources */,
 				43283FC425BB0EF8002DDD08 /* CouponsByCategory.swift in Sources */,
 				43283FC025BB0EF8002DDD08 /* Customer.swift in Sources */,
+				43A2E7D225BE92E500B531DF /* NetworkRouter.swift in Sources */,
 				43283F8425BB0DDB002DDD08 /* CouponsApp.swift in Sources */,
+				43A2E81C25BEEB3C00B531DF /* CustomerServiceImp.swift in Sources */,
 				43283FB425BB0EC8002DDD08 /* OrderView.swift in Sources */,
 				43B0A6AB25BC7A7700C3AC08 /* CustomerDetailsView.swift in Sources */,
 				43B0A6B225BC7B8100C3AC08 /* CompanyItemView.swift in Sources */,
+				43A2E82225BEF02D00B531DF /* CompanyServiceImp.swift in Sources */,
 				43283FA525BB0E89002DDD08 /* CustomersView.swift in Sources */,
 				43283FA425BB0E89002DDD08 /* CompanyiesView.swift in Sources */,
 			);
