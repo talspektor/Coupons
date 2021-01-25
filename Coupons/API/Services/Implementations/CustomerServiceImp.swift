@@ -10,32 +10,157 @@ import Foundation
 struct CustomerServiceImp: CustomerService {
     var client = CustomerClient()
     
-    func getAllCoupons(completion: (Result<[Coupon]?, Error>) -> Void) {
-        
+    func getAllCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+        client.router.request(.getCoupons) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode([Coupon].self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func getCustomerCoupons(completion: (Result<[Coupon]?, Error>) -> Void) {
-        
+    func getCustomerCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+        client.router.request(.getCustomerCoupons) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode([Coupon].self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func getCoupon(id: Int, completion: (Result<Coupon?, Error>) -> Void) {
-        
+    func purchaseCoupon(id: Int, completion: @escaping (Result<Bool, Error>) -> Void) {
+        client.router.request(.purchaseCoupon(id)) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(.success(true))
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func purchaseCoupon(coupon: Coupon, completion: (Result<Bool, Error>) -> Void) {
-        
+    func getCoupons(categoty: Category, completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+        client.router.request(.getCouponsByCategury(categoty)) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode([Coupon].self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func getCoupons(categoty: Category, completion: (Result<[Coupon]?, Error>) -> Void) {
-        
+    func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+        client.router.request(.getCouponsPriceLessThen(maxPrice)) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode([Coupon].self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func getCoupons(maxPrice: Double, completion: (Result<[Coupon]?, Error>) -> Void) {
-        
-    }
-    
-    func getCustomer(completion: (Result<Bool, Error>) -> Void) {
-        
+    func getCustomer(completion: @escaping (Result<Customer, Error>) -> Void) {
+        client.router.request(.getCustoemr) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode(Customer.self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
     

@@ -8,28 +8,139 @@
 import Foundation
 
 struct CompanyServiceImp: CompanyService {
-    func addCoupon(coupon: Coupon, completion: (Result<Bool, Error>) -> Void) {
-        
+    func addCoupon(coupon: Coupon, completion: @escaping (Result<Bool, Error>) -> Void) {
+        client.router.request(.addCoupon(coupon)) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(.success(true))
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func updateCoupon(coupon: Coupon, completion: (Result<Bool, Error>) -> Void) {
-        
+    func updateCoupon(coupon: Coupon, completion: @escaping (Result<Bool, Error>) -> Void) {
+        client.router.request(.updateCoupon(coupon)) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(.success(true))
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func deleteCoupon(coupon: Coupon, completion: (Result<Bool, Error>) -> Void) {
-        
+    func deleteCoupon(id: Int, completion: @escaping (Result<Bool, Error>) -> Void) {
+        client.router.request(.deleteCoupon(id)) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(.success(true))
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func getCoupons(comletion: (Result<[Coupon]?, Error>) -> Void) {
-        
+    func getCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+        client.router.request(.getCoupons) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode([Coupon].self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func getCoupons(maxPrice: Double, completion: (Result<[Coupon]?, Error>) -> Void) {
-        
+    func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+        client.router.request(.getCouponsPriceLessThen(maxPrice)) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode([Coupon].self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
-    func getCompany(completion: (Result<Company?, Error>) -> Void) {
-        
+    func getCompany(completion: @escaping (Result<Company?, Error>) -> Void) {
+        client.router.request(.getCompany) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(.failure(NetworkResponse.noData))
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode(Company.self, from: responseData)
+                        completion(.success(apiResponse))
+                    } catch {
+                        completion(.failure(NetworkResponse.uableToDecode))
+                    }
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
     }
     
     var client = CompanyClient()
