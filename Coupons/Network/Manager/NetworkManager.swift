@@ -40,8 +40,6 @@ class NetworkManager {
     
     static let shared = NetworkManager()
     
-    
-    
     enum Result<String> {
         case success
         case failure(String)

@@ -29,6 +29,14 @@
 		43283FC225BB0EF8002DDD08 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43283FBD25BB0EF8002DDD08 /* Company.swift */; };
 		43283FC325BB0EF8002DDD08 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43283FBE25BB0EF8002DDD08 /* Coupon.swift */; };
 		43283FC425BB0EF8002DDD08 /* CouponsByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43283FBF25BB0EF8002DDD08 /* CouponsByCategory.swift */; };
+		435B200B25C2B0AA00539A40 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B200A25C2B0AA00539A40 /* HomeView.swift */; };
+		435B200F25C2B1D100539A40 /* UserOservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B200E25C2B1D100539A40 /* UserOservableObject.swift */; };
+		435B201725C2C31B00539A40 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B201625C2C31B00539A40 /* Repository.swift */; };
+		435B201C25C2D55800539A40 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B201B25C2D55800539A40 /* ClientService.swift */; };
+		435B206425C2DDC500539A40 /* CouponsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B206325C2DDC500539A40 /* CouponsTests.swift */; };
+		435B206E25C2DDEE00539A40 /* AdminServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B206D25C2DDEE00539A40 /* AdminServicesTests.swift */; };
+		435B207525C2DF5500539A40 /* CustomerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B207425C2DF5500539A40 /* CustomerServiceTests.swift */; };
+		435B207B25C2DF6500539A40 /* CompanyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B207A25C2DF6500539A40 /* CompanyServiceTests.swift */; };
 		43A2E7B425BE89A200B531DF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7B325BE89A200B531DF /* NetworkManager.swift */; };
 		43A2E7BD25BE8CBB00B531DF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */; };
 		43A2E7C225BE8DD500B531DF /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */; };
@@ -49,12 +57,21 @@
 		43A2E81C25BEEB3C00B531DF /* CustomerServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E81B25BEEB3C00B531DF /* CustomerServiceImp.swift */; };
 		43A2E81F25BEEBE300B531DF /* CompanyEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E81E25BEEBE300B531DF /* CompanyEndPoint.swift */; };
 		43A2E82225BEF02D00B531DF /* CompanyServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E82125BEF02D00B531DF /* CompanyServiceImp.swift */; };
-		43A2E82C25BEF90600B531DF /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E82B25BEF90600B531DF /* APIResponse.swift */; };
-		43A2E83125BEFE4300B531DF /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E83025BEFE4300B531DF /* BaseModel.swift */; };
+		43A2E83925C2847100B531DF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E83825C2847100B531DF /* LoginView.swift */; };
 		43B0A6AB25BC7A7700C3AC08 /* CustomerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B0A6AA25BC7A7700C3AC08 /* CustomerDetailsView.swift */; };
 		43B0A6AF25BC7A9200C3AC08 /* CompanyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B0A6AE25BC7A9200C3AC08 /* CompanyDetailsView.swift */; };
 		43B0A6B225BC7B8100C3AC08 /* CompanyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B0A6B125BC7B8100C3AC08 /* CompanyItemView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		435B206625C2DDC500539A40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43283F7825BB0DDB002DDD08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43283F7F25BB0DDB002DDD08;
+			remoteInfo = Coupons;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		43283F8025BB0DDB002DDD08 /* Coupons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coupons.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +98,16 @@
 		43283FBD25BB0EF8002DDD08 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		43283FBE25BB0EF8002DDD08 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		43283FBF25BB0EF8002DDD08 /* CouponsByCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponsByCategory.swift; sourceTree = "<group>"; };
+		435B200A25C2B0AA00539A40 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		435B200E25C2B1D100539A40 /* UserOservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOservableObject.swift; sourceTree = "<group>"; };
+		435B201625C2C31B00539A40 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		435B201B25C2D55800539A40 /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		435B206125C2DDC500539A40 /* CouponsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CouponsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		435B206325C2DDC500539A40 /* CouponsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsTests.swift; sourceTree = "<group>"; };
+		435B206525C2DDC500539A40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		435B206D25C2DDEE00539A40 /* AdminServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminServicesTests.swift; sourceTree = "<group>"; };
+		435B207425C2DF5500539A40 /* CustomerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceTests.swift; sourceTree = "<group>"; };
+		435B207A25C2DF6500539A40 /* CompanyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyServiceTests.swift; sourceTree = "<group>"; };
 		43A2E7B325BE89A200B531DF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -101,8 +128,7 @@
 		43A2E81B25BEEB3C00B531DF /* CustomerServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerServiceImp.swift; sourceTree = "<group>"; };
 		43A2E81E25BEEBE300B531DF /* CompanyEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyEndPoint.swift; sourceTree = "<group>"; };
 		43A2E82125BEF02D00B531DF /* CompanyServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyServiceImp.swift; sourceTree = "<group>"; };
-		43A2E82B25BEF90600B531DF /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
-		43A2E83025BEFE4300B531DF /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		43A2E83825C2847100B531DF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		43B0A6AA25BC7A7700C3AC08 /* CustomerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsView.swift; sourceTree = "<group>"; };
 		43B0A6AE25BC7A9200C3AC08 /* CompanyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsView.swift; sourceTree = "<group>"; };
 		43B0A6B125BC7B8100C3AC08 /* CompanyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyItemView.swift; sourceTree = "<group>"; };
@@ -116,6 +142,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		435B205E25C2DDC500539A40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				43283F8225BB0DDB002DDD08 /* Coupons */,
+				435B206225C2DDC500539A40 /* CouponsTests */,
 				43283F8125BB0DDB002DDD08 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				43283F8025BB0DDB002DDD08 /* Coupons.app */,
+				435B206125C2DDC500539A40 /* CouponsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,13 +173,12 @@
 		43283F8225BB0DDB002DDD08 /* Coupons */ = {
 			isa = PBXGroup;
 			children = (
+				435B200D25C2B11400539A40 /* ObservableObjects */,
 				43A2E7B225BE898700B531DF /* Network */,
 				43A2E7E025BEA19C00B531DF /* API */,
 				43283F9325BB0E04002DDD08 /* App */,
 				43283F8525BB0DDB002DDD08 /* ContentView.swift */,
-				43283F9725BB0E4C002DDD08 /* OrderCouopon.swift */,
 				43283F9A25BB0E57002DDD08 /* AppView.swift */,
-				43283F9D25BB0E60002DDD08 /* AdminObservableObject.swift */,
 				43283FA025BB0E68002DDD08 /* View */,
 				43283FB625BB0ED7002DDD08 /* MockData */,
 				43283FBA25BB0EED002DDD08 /* Models */,
@@ -175,6 +209,8 @@
 		43283FA025BB0E68002DDD08 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				435B200925C2B09A00539A40 /* Home */,
+				43A2E83725C2845800B531DF /* Login */,
 				43283FA125BB0E77002DDD08 /* AdminViews */,
 				43283FA725BB0E97002DDD08 /* CouponDetail.swift */,
 				43283FAA25BB0E97002DDD08 /* CouponItemView.swift */,
@@ -222,7 +258,6 @@
 				43283FBE25BB0EF8002DDD08 /* Coupon.swift */,
 				43283FBF25BB0EF8002DDD08 /* CouponsByCategory.swift */,
 				43283FBB25BB0EF8002DDD08 /* Customer.swift */,
-				43A2E83025BEFE4300B531DF /* BaseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +268,52 @@
 				43283F8725BB0DDC002DDD08 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		435B200925C2B09A00539A40 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				435B200A25C2B0AA00539A40 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		435B200D25C2B11400539A40 /* ObservableObjects */ = {
+			isa = PBXGroup;
+			children = (
+				43283F9D25BB0E60002DDD08 /* AdminObservableObject.swift */,
+				43283F9725BB0E4C002DDD08 /* OrderCouopon.swift */,
+				435B200E25C2B1D100539A40 /* UserOservableObject.swift */,
+			);
+			path = ObservableObjects;
+			sourceTree = "<group>";
+		};
+		435B201525C2C2FF00539A40 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				435B201625C2C31B00539A40 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		435B206225C2DDC500539A40 /* CouponsTests */ = {
+			isa = PBXGroup;
+			children = (
+				435B207325C2DF3B00539A40 /* Services */,
+				435B206325C2DDC500539A40 /* CouponsTests.swift */,
+				435B206525C2DDC500539A40 /* Info.plist */,
+			);
+			path = CouponsTests;
+			sourceTree = "<group>";
+		};
+		435B207325C2DF3B00539A40 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				435B206D25C2DDEE00539A40 /* AdminServicesTests.swift */,
+				435B207425C2DF5500539A40 /* CustomerServiceTests.swift */,
+				435B207A25C2DF6500539A40 /* CompanyServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		43A2E7B225BE898700B531DF /* Network */ = {
@@ -285,7 +366,7 @@
 		43A2E7E025BEA19C00B531DF /* API */ = {
 			isa = PBXGroup;
 			children = (
-				43A2E82E25BEF91600B531DF /* Response */,
+				435B201525C2C2FF00539A40 /* Repository */,
 				43A2E80025BEC4C200B531DF /* EndPiont */,
 				43A2E7FA25BEC46800B531DF /* Client */,
 				43A2E7E525BEAB3600B531DF /* Services */,
@@ -328,6 +409,7 @@
 				43A2E7E625BEAB5000B531DF /* CustomerServise.swift */,
 				43A2E7EC25BEAD9900B531DF /* AdminService.swift */,
 				43A2E7F025BEAF6200B531DF /* CompanyService.swift */,
+				435B201B25C2D55800539A40 /* ClientService.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -342,12 +424,12 @@
 			path = Implementations;
 			sourceTree = "<group>";
 		};
-		43A2E82E25BEF91600B531DF /* Response */ = {
+		43A2E83725C2845800B531DF /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				43A2E82B25BEF90600B531DF /* APIResponse.swift */,
+				43A2E83825C2847100B531DF /* LoginView.swift */,
 			);
-			path = Response;
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,17 +452,39 @@
 			productReference = 43283F8025BB0DDB002DDD08 /* Coupons.app */;
 			productType = "com.apple.product-type.application";
 		};
+		435B206025C2DDC500539A40 /* CouponsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 435B206825C2DDC500539A40 /* Build configuration list for PBXNativeTarget "CouponsTests" */;
+			buildPhases = (
+				435B205D25C2DDC500539A40 /* Sources */,
+				435B205E25C2DDC500539A40 /* Frameworks */,
+				435B205F25C2DDC500539A40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				435B206725C2DDC500539A40 /* PBXTargetDependency */,
+			);
+			name = CouponsTests;
+			productName = CouponsTests;
+			productReference = 435B206125C2DDC500539A40 /* CouponsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		43283F7825BB0DDB002DDD08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					43283F7F25BB0DDB002DDD08 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					435B206025C2DDC500539A40 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 43283F7F25BB0DDB002DDD08;
 					};
 				};
 			};
@@ -398,6 +502,7 @@
 			projectRoot = "";
 			targets = (
 				43283F7F25BB0DDB002DDD08 /* Coupons */,
+				435B206025C2DDC500539A40 /* CouponsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -409,6 +514,13 @@
 			files = (
 				43283F8B25BB0DDC002DDD08 /* Preview Assets.xcassets in Resources */,
 				43283F8825BB0DDC002DDD08 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		435B205F25C2DDC500539A40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,21 +536,22 @@
 				43A2E7C525BE8E7B00B531DF /* NetworkError.swift in Sources */,
 				43283FC325BB0EF8002DDD08 /* Coupon.swift in Sources */,
 				43283FAE25BB0E97002DDD08 /* CouponItemView.swift in Sources */,
-				43A2E82C25BEF90600B531DF /* APIResponse.swift in Sources */,
 				43A2E7C925BE8F1D00B531DF /* URLParameterEncoder.swift in Sources */,
 				43A2E81F25BEEBE300B531DF /* CompanyEndPoint.swift in Sources */,
 				43283F9E25BB0E60002DDD08 /* AdminObservableObject.swift in Sources */,
-				43A2E83125BEFE4300B531DF /* BaseModel.swift in Sources */,
 				43A2E7ED25BEAD9900B531DF /* AdminService.swift in Sources */,
 				43A2E81625BED0D200B531DF /* CompanyClient.swift in Sources */,
 				43283FAC25BB0E97002DDD08 /* CouponsForOrder.swift in Sources */,
 				43283FB825BB0EE7002DDD08 /* MockData.swift in Sources */,
 				43A2E7C225BE8DD500B531DF /* ParameterEncoder.swift in Sources */,
 				43A2E7E725BEAB5000B531DF /* CustomerServise.swift in Sources */,
+				435B201C25C2D55800539A40 /* ClientService.swift in Sources */,
 				43A2E7F425BEB5FA00B531DF /* AdminServiceImp.swift in Sources */,
 				43283F9525BB0E16002DDD08 /* AppDelegate.swift in Sources */,
 				43283F8625BB0DDB002DDD08 /* ContentView.swift in Sources */,
+				435B201725C2C31B00539A40 /* Repository.swift in Sources */,
 				43283FAD25BB0E97002DDD08 /* MyCoupons.swift in Sources */,
+				435B200B25C2B0AA00539A40 /* HomeView.swift in Sources */,
 				43B0A6AF25BC7A9200C3AC08 /* CompanyDetailsView.swift in Sources */,
 				43283FB325BB0EC8002DDD08 /* CheckoutView.swift in Sources */,
 				43A2E7F125BEAF6200B531DF /* CompanyService.swift in Sources */,
@@ -451,6 +564,8 @@
 				43283FC225BB0EF8002DDD08 /* Company.swift in Sources */,
 				43A2E7CD25BE91B200B531DF /* JSONParameterEncoder.swift in Sources */,
 				43283FC125BB0EF8002DDD08 /* Category.swift in Sources */,
+				435B200F25C2B1D100539A40 /* UserOservableObject.swift in Sources */,
+				43A2E83925C2847100B531DF /* LoginView.swift in Sources */,
 				43A2E80A25BEC71700B531DF /* CustomerEndPoint.swift in Sources */,
 				43A2E7D625BE941F00B531DF /* Router.swift in Sources */,
 				43283FC425BB0EF8002DDD08 /* CouponsByCategory.swift in Sources */,
@@ -467,7 +582,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		435B205D25C2DDC500539A40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435B206425C2DDC500539A40 /* CouponsTests.swift in Sources */,
+				435B206E25C2DDEE00539A40 /* AdminServicesTests.swift in Sources */,
+				435B207525C2DF5500539A40 /* CustomerServiceTests.swift in Sources */,
+				435B207B25C2DF6500539A40 /* CompanyServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		435B206725C2DDC500539A40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43283F7F25BB0DDB002DDD08 /* Coupons */;
+			targetProxy = 435B206625C2DDC500539A40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		43283F8D25BB0DDC002DDD08 /* Debug */ = {
@@ -628,6 +762,46 @@
 			};
 			name = Release;
 		};
+		435B206925C2DDC500539A40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CouponsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = talspektor.CouponsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coupons.app/Coupons";
+			};
+			name = Debug;
+		};
+		435B206A25C2DDC500539A40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CouponsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = talspektor.CouponsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coupons.app/Coupons";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -645,6 +819,15 @@
 			buildConfigurations = (
 				43283F9025BB0DDC002DDD08 /* Debug */,
 				43283F9125BB0DDC002DDD08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		435B206825C2DDC500539A40 /* Build configuration list for PBXNativeTarget "CouponsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				435B206925C2DDC500539A40 /* Debug */,
+				435B206A25C2DDC500539A40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

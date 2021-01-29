@@ -8,6 +8,29 @@
 import Foundation
 
 struct CompanyServiceImp: CompanyService {
+    
+    static let shared = CompanyServiceImp()
+    
+    var client = CompanyClient()
+    
+    func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void) {
+        client.router.request(.login(email, password)) { data, response, error in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(.success(true))
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
+    }
+    
     func addCoupon(coupon: Coupon, completion: @escaping (Result<Bool, Error>) -> Void) {
         client.router.request(.addCoupon(coupon)) { (data, response, error) in
             guard error == nil else {
@@ -142,7 +165,4 @@ struct CompanyServiceImp: CompanyService {
             }
         }
     }
-    
-    var client = CompanyClient()
-  
 }

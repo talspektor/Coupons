@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct CouponsApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    let orederCoupon: OrderCoupon = {
-        let order = OrderCoupon()
+    let orederCoupon: CustomerObservable = {
+        let order = CustomerObservable()
         order.fetchCoupons()
         order.fetchMyCoupons()
         return order

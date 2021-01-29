@@ -14,6 +14,13 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         do {
             let request = try self.buildRequest(from: route)
             task = session.dataTask(with: request, completionHandler: { data, response, error in
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("HTTP STATUS: \(httpResponse.statusCode)")
+                }
+                print("URL: \(String(describing: response?.url))")
+                print("Data: \(String(describing: data))")
+                print("REQUEST BODY \(String(describing: request.httpBody))")
+                print("Error: \(String(describing: error))")
                 completion(data, response, error)
             })
         } catch {

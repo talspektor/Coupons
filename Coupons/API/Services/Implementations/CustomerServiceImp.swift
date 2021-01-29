@@ -8,7 +8,28 @@
 import Foundation
 
 struct CustomerServiceImp: CustomerService {
+    
+    static let shared = CustomerServiceImp()
+    
     var client = CustomerClient()
+    
+    func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void) {
+        client.router.request(.login(email, password)) { data, response, error in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(.success(true))
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
+    }
     
     func getAllCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
         client.router.request(.getCoupons) { (data, response, error) in

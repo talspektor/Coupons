@@ -17,7 +17,7 @@ enum CompanyEndPoint: EndPointType {
     case getCompany
     
     var baseURL: URL {
-        return URL(string: "https://localhost:8080/api")!
+        return URL(string: "http://localhost:8080/api")!
     }
     
     var path: String {

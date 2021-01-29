@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyCoupons: View {
-    @EnvironmentObject var order: OrderCoupon
+    @EnvironmentObject var order: CustomerObservable
     //TODO: use real data
     var sections = mockSections
     

@@ -9,7 +9,27 @@ import Foundation
 
 struct AdminServiceImp: AdminService {
     
+    static let shared = AdminServiceImp()
+    
     let client = AdminCilent()
+    
+    func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void) {
+        client.router.request(.login(email, password)) { data, response, error in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = NetworkManager.shared.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    completion(.success(true))
+                case .failure(let nenworkFailureError):
+                    completion(.failure(nenworkFailureError))
+                }
+            }
+        }
+    }
     
     func getCustomers(completion: @escaping (Result<[Customer], Error>) -> Void) {
         client.router.request(.getCustomers) { (data, response, error) in
@@ -38,7 +58,7 @@ struct AdminServiceImp: AdminService {
         }
     }
     
-    func getCompanies(completion: @escaping (Result<[Company]?, Error>) -> Void) {
+    func getCompanies(completion: @escaping (Result<[Company], Error>) -> Void) {
         client.router.request(.getCompanies) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
@@ -119,7 +139,7 @@ struct AdminServiceImp: AdminService {
         }
     }
     
-    func getCompany(id: Int, completion: @escaping (Result<Company?, Error>) -> Void) {
+    func getCompany(id: Int, completion: @escaping (Result<Company, Error>) -> Void) {
         client.router.request(.getCompany(id)) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
@@ -146,7 +166,7 @@ struct AdminServiceImp: AdminService {
         }
     }
     
-    func getCompany(name: String, completion: @escaping (Result<Company?, Error>) -> Void) {
+    func getCompany(name: String, completion: @escaping (Result<Company, Error>) -> Void) {
         client.router.request(.getCompanyByName(name)) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))

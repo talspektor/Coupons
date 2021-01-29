@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CompanyService {
+protocol CompanyService: ClientService {
     var client: CompanyClient { get }
     func addCoupon(coupon: Coupon, completion: @escaping (Result<Bool, Error>) -> Void)
     func updateCoupon(coupon: Coupon, completion: @escaping (Result<Bool, Error>) -> Void)

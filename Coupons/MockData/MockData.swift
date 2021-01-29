@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MockData {
-    @EnvironmentObject var orderCoupon: OrderCoupon
+    @EnvironmentObject var orderCoupon: CustomerObservable
     
     static let shared = MockData()
     
@@ -59,7 +59,7 @@ var randomCompany: Company {
     return Company(id: random, name: "company_\(random)", email: "company_\(random)@email.com", password: "pass\(random)", coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon])
 }
 var randomCustomer: Customer {
-    return Customer(id: UUID.init(), firstName: "firstName_\(random)", lastName: "lastName_\(random)", email: "customer_\(random)@mail.com", password: "pass_\(random)", coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon])
+    return Customer(id: random, firstName: "firstName_\(random)", lastName: "lastName_\(random)", email: "customer_\(random)@mail.com", password: "pass_\(random)", coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon])
 }
 let mockCompanies = [
     randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany

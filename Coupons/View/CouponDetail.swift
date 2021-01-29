@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CouponDetail: View {
-    @EnvironmentObject var orderCoupon: OrderCoupon
+    @EnvironmentObject var orderCoupon: CustomerObservable
     
     private let isForOrder: Bool
     private let coupon: Coupon
@@ -36,7 +36,7 @@ struct CouponDetail: View {
                         .padding([.leading, .top])
                 }
                     
-                Text("Expitation: \(formatter.string(from: coupon.endDate))")
+                Text("Expiration: \(formatter.string(from: coupon.endDate))")
                     .padding([.leading, .top])
                 
                 Spacer()
@@ -55,7 +55,7 @@ struct CouponDetail: View {
 }
 
 struct CouponDetail_Previews: PreviewProvider {
-    static let orderCouopon = OrderCoupon()
+    static let orderCouopon = CustomerObservable()
     static var previews: some View {
         CouponDetail(isForOrder: true, coupon:  mockCompany.coupons[0]).environmentObject(orderCouopon)
     }

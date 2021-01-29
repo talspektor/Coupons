@@ -9,6 +9,7 @@ import Foundation
 
 enum AdminEndPoint: EndPointType {
     
+    case login(String, String)
     case getCompanies
     case getCustomers
     case addComapny(Company)
@@ -22,10 +23,12 @@ enum AdminEndPoint: EndPointType {
     case getCustomer(Int)
     
     var baseURL: URL {
-        return URL(string: "https://localhost:8080/api")!
+        return URL(string: "http://localhost:8080/api")!
     }
     var path: String {
         switch self {
+        case .login(let email, let password):
+            return "/login/\(email)/\(password)"
         case .addComapny:
             return "/add-company"
         case .getCompanies:
@@ -37,11 +40,11 @@ enum AdminEndPoint: EndPointType {
         case .updateCompany(_):
             return "/update-company"
         case .updateCustomer(_):
-            return "/updte-customer"
-        case .deleteCompany(_):
-            return "/delete-company"
-        case .deleteCustomer(_):
-            return "/delete-customer"
+            return "/update-customer"
+        case .deleteCompany(let id):
+            return "/delete-company/\(id)"
+        case .deleteCustomer(let id):
+            return "/delete-customer/\(id)"
         case .getCompany(let id):
             return "/company/\(id)"
         case .getCompanyByName(let name):
@@ -53,6 +56,8 @@ enum AdminEndPoint: EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .login:
+            return .post
         case .addComapny:
             return .post
         case .addCustomer:
@@ -78,7 +83,63 @@ enum AdminEndPoint: EndPointType {
         }
     }
     
-    var task: HTTPTask { .request }
+    var task: HTTPTask {
+        switch self {
+        case .login:
+            return .request
+        case .addComapny(let company):
+            let params: Parameters = [
+                "name": company.name,
+                "email": company.email,
+                "password": company.password,
+                "coupons": company.coupons
+            ]
+            return .requestParametest(bodyParameters: params, urlParanatars: nil)
+        case .addCustomer(let customer):
+            let params: Parameters = [
+                "firstName": customer.firstName,
+                "lastName": customer.lastName,
+                "email": customer.email,
+                "password": customer.password,
+                "coupons": customer.coupons
+            ]
+            return .requestParametest(bodyParameters: params, urlParanatars: nil)
+        case .deleteCompany:
+            return .request
+        case .deleteCustomer:
+            return .request
+        case .getCompanies:
+            return .request
+        case .getCustomers:
+            return .request
+        case .getCompany:
+            return .request
+        case .getCustomer:
+            return .request
+        case .getCompanyByName:
+            return .request
+        case .updateCompany(let company):
+            let params: Parameters = [
+                "id": company.id,
+                "name": company.name,
+                "email": company.email,
+                "password": company.password,
+                "coupons": company.coupons
+            ]
+            return .requestParametest(bodyParameters: params, urlParanatars: nil)
+        case .updateCustomer(let customer):
+            let params: Parameters = [
+                "id": customer.id,
+                "firstName": customer.firstName,
+                "lastName": customer.lastName,
+                "email": customer.email,
+                "password": customer.password,
+                "coupons": customer.coupons
+            ]
+             return .requestParametest(bodyParameters: params, urlParanatars: nil)
+        }
+        
+    }
     var headers: HTTPHeaders? {
         return ["": ""]
     }

@@ -18,7 +18,7 @@ enum CustomerEndPoint: EndPointType {
     case getCustoemr
     
     var baseURL: URL {
-        return URL(string: "https://localhost:8080/api")!
+        return URL(string: "http://localhost:8080/api")!
     }
     
     var path: String {

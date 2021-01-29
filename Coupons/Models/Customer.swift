@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Customer: Codable, Identifiable, Equatable, BaseModel {
-    let id: UUID
+struct Customer: Codable, Identifiable, Equatable {
+    let id: Int
     let firstName: String
     let lastName: String
     let email: String

@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct CouponsForOrder: View {
-    @EnvironmentObject var order: OrderCoupon
+    @EnvironmentObject var order: CustomerObservable
 
     var body: some View {
         NavigationView {
