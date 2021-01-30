@@ -5,4 +5,122 @@
 //  Created by Tal talspektor on 28/01/2021.
 //
 
-import Foundation
+import XCTest
+@testable import Coupons
+
+class CustomerServiceTests: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+        testLogin()
+    }
+    //tested :) 29.1.2021
+    func testLogin() {
+        let expectation = XCTestExpectation()
+        CustomerServiceImp.shared.login(email: "test_ios1", password: "test_ios1") { (result) in
+            switch result {
+            case .success(let isLoggedIn):
+                assert(isLoggedIn, "login")
+                expectation.fulfill()
+            case .failure(let error):
+                assert(false, "login fail: \(error)")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testGetAllCoupons() {
+        let expectation = XCTestExpectation()
+        CustomerServiceImp.shared.getAllCoupons { (result) in
+            switch result {
+            case .success:
+                assert(true, "Get all coupons")
+                expectation.fulfill()
+            case .failure(let error):
+                assert(false, "Get all coupns fail: \(error)")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testGetCustomerCoupons() {
+        let expectation = XCTestExpectation()
+        CustomerServiceImp.shared.getCustomerCoupons { (result) in
+            switch result {
+            case .success(let coupons):
+                assert(true, "Get customer coupons")
+                print(String(describing: coupons))
+                expectation.fulfill()
+            case .failure(let error):
+                assert(false, "Get customer coupons fail: \(error)")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    //tested :) 29.1.2021
+    func testPurchaseCoupon() {
+        let expectation = XCTestExpectation()
+        CustomerServiceImp.shared.purchaseCoupon(id: 15) { (result) in
+            switch result {
+            case .success(let isPurchased):
+                assert(isPurchased, "purchase coupon")
+                expectation.fulfill()
+            case .failure(let error):
+                assert(false, "purchase coupon fali: \(error)")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testGetCouponsByCategory() {
+        let expectation = XCTestExpectation()
+        CustomerServiceImp.shared.getCoupons(categoty: .ELECTRICITY) { (result) in
+            switch result {
+            case .success(let coupons):
+                assert(true, "get couponsByCategory")
+                print(String(describing: coupons))
+                expectation.fulfill()
+            case .failure(let error):
+                assert(false, "get couponsByCategory fail: \(error)")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testGetCouponsByMaxPrice() {
+        let expectation = XCTestExpectation()
+        CustomerServiceImp.shared.getCoupons(maxPrice: 10) { (result) in
+            switch result {
+            case .success(let coupons):
+                assert(true, "getCoupons")
+                print(String(describing: coupons))
+                expectation.fulfill()
+            case .failure(let error):
+
+                assert(false, "getCoupons fail: \(error)")
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testGetCustomer() {
+        let expectation = XCTestExpectation()
+        CustomerServiceImp.shared.getCustomer { (result) in
+            switch result {
+            case .success(let coupons):
+                assert(true, "getCustomer")
+                print(String(describing: coupons))
+                expectation.fulfill()
+            case .failure(let error):
+                assert(false, "getCustomer fail: \(error)")
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+}

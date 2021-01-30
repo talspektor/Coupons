@@ -45,7 +45,7 @@ enum CustomerEndPoint: EndPointType {
         case .login:
             return .post
         case .purchaseCoupon:
-            return .post
+            return .put
         case .getCustomerCoupons:
             return .get
         case .getCoupons:

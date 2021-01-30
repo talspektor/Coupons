@@ -48,7 +48,7 @@ enum CompanyEndPoint: EndPointType {
         case .updateCoupon:
             return .put
         case .deleteCoupon:
-            return .put
+            return .delete
         case .getCoupons:
             return .get
         case .getCouponsPriceLessThen:
@@ -59,7 +59,32 @@ enum CompanyEndPoint: EndPointType {
     }
     
     var task: HTTPTask {
-        return .request
+        switch self {
+        case .login:
+            return .request
+        case .addCoupon(let coupon), .updateCoupon(let coupon):
+            let params: Parameters = [
+                "amount": coupon.amount,
+                "categoryId": coupon.category,
+                "company": coupon.company,
+                "description": coupon.description,
+                "endDate": coupon.endDate,
+                "id": coupon.id,
+                "imageUrl": coupon.imageUrl,
+                "price": coupon.price,
+                "startDate": coupon.startDate,
+                "title": coupon.title
+            ]
+            return .requestParametest(bodyParameters: params, urlParanatars: nil)
+        case .deleteCoupon:
+            return .request
+        case .getCoupons:
+            return .request
+        case .getCouponsPriceLessThen:
+            return .request
+        case .getCompany:
+            return .request
+        }
     }
     
     var headers: HTTPHeaders? {

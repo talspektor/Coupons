@@ -16,7 +16,7 @@ struct Coupon: Codable, Equatable, Identifiable, Hashable {
     let category: Category
     let title: String
     let description: String
-    let staertDate: Date
+    let startDate: Date
     let endDate: Date
     let amount: Int
     let price: Double

@@ -123,7 +123,7 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    
+    //tested :) 29.1.21
     func testAddCustomer() {
         let expectation = XCTestExpectation()
         let customer = Customer(id: 1, firstName: "test_ios", lastName: "test_ios", email: "test_ios", password: "test_ios", coupons: [])
