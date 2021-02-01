@@ -110,7 +110,7 @@ class AdminServicesTests: XCTestCase {
     //tested :) 29.1.21
     func testAddCompany() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "test_ios", email: "test_ios", password: "test_ios", coupons: [])
+        let company = Company(id: 1, name: "test_ios", email: "test_ios", password: "test_ios"/*, coupons: []*/)
         AdminServiceImp.shared.addCompany(company: company) { (result) in
             switch result {
             case .success(let isAdded):
@@ -126,7 +126,7 @@ class AdminServicesTests: XCTestCase {
     //tested :) 29.1.21
     func testAddCustomer() {
         let expectation = XCTestExpectation()
-        let customer = Customer(id: 1, firstName: "test_ios", lastName: "test_ios", email: "test_ios", password: "test_ios", coupons: [])
+        let customer = Customer(id: 1, firstName: "test_ios", lastName: "test_ios", email: "test_ios", password: "test_ios"/*, coupons: []*/)
         AdminServiceImp.shared.addCustomer(customer: customer) { (result) in
             switch result {
             case .success(let isCustomerAdded):
@@ -142,7 +142,7 @@ class AdminServicesTests: XCTestCase {
     //tested :) 29.1.21
     func testUpdateCustomer() {
         let expectation = XCTestExpectation()
-        let customer = Customer(id: 18, firstName: "test_ios1", lastName: "test_ios1", email: "test_ios1", password: "test_ios1", coupons: [])
+        let customer = Customer(id: 18, firstName: "test_ios1", lastName: "test_ios1", email: "test_ios1", password: "test_ios1"/*, coupons: []*/)
         AdminServiceImp.shared.updateCustomer(customer: customer) { (result) in
             switch result {
             case .success(let isCustomerUpdated):
@@ -158,7 +158,7 @@ class AdminServicesTests: XCTestCase {
     //tested :) 29.1.21
     func testUpdateComany() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 30, name: "test_ios1", email: "test_ios1", password: "test_ios1", coupons: [])
+        let company = Company(id: 30, name: "test_ios1", email: "test_ios1", password: "test_ios1"/*, coupons: []*/)
         AdminServiceImp.shared.updateCompany(company: company) { (result) in
             switch result {
             case .success(let isCompanyUpdated):

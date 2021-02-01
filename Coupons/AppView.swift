@@ -9,28 +9,16 @@ import SwiftUI
 
 struct AppView: View {
     @EnvironmentObject var user: CustomerObservable
+    
     var body: some View {
-        if user.isLoggedIn {
-            HomeView()
-        } else {
-            LoginView()
-        }
-//        TabView {
-//            CouponsForOrder()
-//                .tabItem {
-//                    Image(systemName: "list.dash")
-//                    Text("Coupons")
-//                }
-//            OrderView()
-//                .tabItem {
-//                    Image(systemName: "square.and.pencil")
-//                    Text("Order")
-//                }
-//            MyCoupons()
-//                .tabItem {
-//                    Image(systemName: "star.fill")
-//                    Text("My Coupons")
-//                }
+//        if user.useMockData {
+//            HomeView()
+//        } else {
+            if user.isLoggedIn {
+                HomeView()
+            } else {
+                LoginView()
+            }
 //        }
     }
 }

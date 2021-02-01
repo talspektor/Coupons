@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OrderView: View {
     @EnvironmentObject var orderCoupon: CustomerObservable
+    
     var body: some View {
         NavigationView {
             List {

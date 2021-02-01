@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct CompanyDetailsView: View {
-    var company: Company!
+    var company: Company
+    
     var body: some View {
-        Text("Name: \(company.name)")
-        Text("Email: \(company.email)")
+        VStack {
+            Text("Name: \(company.name)")
+            Text("Email: \(company.email)")
+        }
     }
 }
 
 struct CompanyDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CompanyDetailsView()
+        CompanyDetailsView(company: randomCompany)
     }
 }

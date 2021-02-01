@@ -9,9 +9,12 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var user: CustomerObservable
+    
     @State private var email: String = ""
     @State private var password: String = ""
+    
     private var types: [UserType] = [.admin, .company, .customer]
+    
     let verticalPaddingForFrom = 40.0
     var selection: String?
     

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AdminHomeView: View {
+    @EnvironmentObject var app: CustomerObservable
+    
     @ObservedObject var viewModel = AdminHomeViewModel()
     
     var body: some View {
@@ -34,6 +36,7 @@ struct AdminHomeView: View {
             }
             
         }.onAppear {
+            self.viewModel.useMockData = app.useMockData
             self.viewModel.getComapnies()
             self.viewModel.getCustomers()
         }

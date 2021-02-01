@@ -12,19 +12,23 @@ enum UserType: String {
     case company = "Conpany"
 }
 class CustomerObservable: ObservableObject {
-    
-    @Published var selectedType: UserType = .customer
+
     @Published var coupons: [CategoryCoupons]?
     @Published var myCouopns: [CategoryCoupons]?
     @Published var orderList = [Coupon]()
+    @Published var useMockData: Bool = true
     @Published var isLoggedIn = false
+    @Published var selectedType: UserType = UserType.company
+    @Published var company: Company?
+    @Published var customer: Customer?
+
     var order: Set<Coupon> = Set<Coupon>()
     
     var total: Double = 0
     
     init() {
-        fetchCoupons()
-        fetchMyCoupons()
+//        fetchCoupons()
+//        fetchMyCoupons()
     }
     
     func addToTotal(coupon: Coupon) {
@@ -49,9 +53,9 @@ class CustomerObservable: ObservableObject {
     }
     //TODO: get coupons from REST API
     func fetchCoupons() {
-        #if DEBUG
-        coupons = mockSections
-        #endif
+//        if useMockData {
+//            coupons = mockSections
+//        }
 //        CustomerServiceImp.shared.getAllCoupons { result in
 //            switch result {
 //            case .success(let coupons):
@@ -63,9 +67,9 @@ class CustomerObservable: ObservableObject {
     }
     //TODO: get coupons from REST API
     func fetchMyCoupons() {
-        #if DEBUG
-        myCouopns = mockSections
-        #endif
+//        if useMockData {
+//            myCouopns = mockSections
+//        }
 //        CustomerServiceImp.shared.getCustomerCoupons { result in
 //            switch result {
 //            case .success(let companies):

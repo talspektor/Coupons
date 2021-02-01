@@ -12,13 +12,13 @@ struct Coupon: Codable, Equatable, Identifiable, Hashable {
         hasher.combine(id)
     }
     let id: Int
-    let company: Company
-    let category: Category
-    let title: String
-    let description: String
-    let startDate: Date
-    let endDate: Date
-    let amount: Int
-    let price: Double
-    let imageUrl: String
+    var company: Company
+    var category: Category
+    var title: String
+    var description: String
+    var startDate: Date
+    var endDate: Date
+    var amount: Int
+    var price: Double
+    var imageUrl: String
 }

@@ -14,7 +14,7 @@ struct CustomersListView: View {
         NavigationView {
             List {
                 ForEach(customers) { customer in
-                    
+                    Text("Name: \(customer.firstName) \(customer.lastName)")
                 }
             }.navigationTitle("Customers")
             .listStyle(GroupedListStyle())

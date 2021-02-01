@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CustomerHomeView: View {
+    @EnvironmentObject var app: CustomerObservable
+    
     @ObservedObject var viewModel = CustomerHomeViewModel()
     
     var body: some View {
@@ -40,6 +42,7 @@ struct CustomerHomeView: View {
                 ErrorFetchDataAlertView()
             }
         }.onAppear {
+            self.viewModel.useMockData = app.useMockData
             self.viewModel.getAllCoupons()
             self.viewModel.getCustomerCoupons()
         }

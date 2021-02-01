@@ -32,7 +32,7 @@ class CompanyServiceTests: XCTestCase {
     
     func testAddCoupon() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "", email: "", password: "", coupons: [])
+        let company = Company(id: 1, name: "", email: "", password: ""/*, coupons: []*/)
         let coupon = Coupon(id: 1, company: company, category: .ELECTRICITY, title: "ios", description: "ios", startDate: Date(), endDate: Date() + (10 * 60 * 60 * 24), amount: 5, price: 10, imageUrl: "")
         CompanyServiceImp.shared.addCoupon(coupon: coupon) { (result) in
             switch result {
@@ -49,7 +49,7 @@ class CompanyServiceTests: XCTestCase {
     
     func testUpdateCoupon() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "", email: "", password: "", coupons: [])
+        let company = Company(id: 1, name: "", email: "", password: ""/*, coupons: []*/)
         let coupon = Coupon(id: 1, company: company, category: .ELECTRICITY, title: "ios", description: "ios", startDate: Date(), endDate: Date() + (10 * 60 * 60 * 24), amount: 5, price: 10, imageUrl: "")
         CompanyServiceImp.shared.updateCoupon(coupon: coupon) { (result) in
             switch result {
