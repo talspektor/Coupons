@@ -12,7 +12,7 @@ protocol CompanyService: ClientService {
     func addCoupon(coupon: Coupon, completion: @escaping (Result<Bool, Error>) -> Void)
     func updateCoupon(coupon: Coupon, completion: @escaping (Result<Bool, Error>) -> Void)
     func deleteCoupon(id: Int, completion: @escaping (Result<Bool, Error>) -> Void)
-    func getCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void)
+    func getCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void)
     func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon]?, Error>) -> Void)
-    func getCompany(completion: @escaping (Result<Company?, Error>) -> Void)
+    func getCompany(completion: @escaping (Result<Company, Error>) -> Void)
 }

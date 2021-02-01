@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct CustomerDetailsView: View {
+    var customer: Customer
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            Text("Name: \(customer.firstName) \(customer.lastName)")
+            Text("Email: \(customer.email)")
+            Spacer()
+        }
     }
 }
 
 struct CustomerDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomerDetailsView()
+        CustomerDetailsView(customer: randomCustomer)
     }
 }

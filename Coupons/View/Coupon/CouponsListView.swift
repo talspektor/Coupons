@@ -8,22 +8,26 @@
 import SwiftUI
 import CoreData
 
-struct CouponsForOrder: View {
-    @EnvironmentObject var order: CustomerObservable
+struct CouponsListView: View {
+//    @EnvironmentObject var order: CustomerObservable
+    
+    var sections: [CategoryCoupons]
+    var title: String
+    var isForOrder: Bool
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(order.coupons ?? [CategoryCoupons]()) { categoryCoupons in
+                ForEach(sections) { categoryCoupons in
                     Section(header: Text(categoryCoupons.category.rawValue)
                                 .font(.title2)
                                 .foregroundColor(.blue)) {
                         ForEach(categoryCoupons.coupons) { coupon in
-                            CouponItemView(isForOrder: true, coupon: coupon)
+                            CouponItemView(isForOrder: isForOrder, coupon: coupon)
                         }
                     }
                 }
-            }.navigationTitle("iCoupons")
+            }.navigationTitle(title)
             .listStyle(GroupedListStyle())
         }
     }
@@ -31,6 +35,6 @@ struct CouponsForOrder: View {
 
 struct CouponsForOrder_Previews: PreviewProvider {
     static var previews: some View {
-        CouponsForOrder()
+        CouponsListView(sections: mockSections, title: "Coupons", isForOrder: true)
     }
 }

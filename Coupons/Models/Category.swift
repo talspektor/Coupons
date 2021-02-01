@@ -7,9 +7,17 @@
 
 import Foundation
 
-enum Category: String, Codable, Hashable {
+enum Category: String, Codable, Hashable, Equatable {
     case FOOD
     case VACATION
     case SPORTS
     case ELECTRICITY
+    
+    static func == (lhs: Category, rhs: Category) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+    
+    static func > (lhs: Category, rhs: Category) -> Bool {
+        return lhs.rawValue > rhs.rawValue
+    }
 }

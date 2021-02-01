@@ -57,6 +57,6 @@ struct CouponDetail: View {
 struct CouponDetail_Previews: PreviewProvider {
     static let orderCouopon = CustomerObservable()
     static var previews: some View {
-        CouponDetail(isForOrder: true, coupon:  mockCompany.coupons[0]).environmentObject(orderCouopon)
+        CouponDetail(isForOrder: true, coupon:  mockFoodCoupond[0]).environmentObject(orderCouopon)
     }
 }

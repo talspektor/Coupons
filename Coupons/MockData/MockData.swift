@@ -56,10 +56,10 @@ var randomCoupon: Coupon {
     return Coupon(id: random, company: randomCompany, category: randomCategury, title: "title_\(random)", description: "This is some generic coupon description...", startDate: Date(), endDate: Date() + 30, amount: randomAmount, price: randomPrice, imageUrl: "")
 }
 var randomCompany: Company {
-    return Company(id: random, name: "company_\(random)", email: "company_\(random)@email.com", password: "pass\(random)", coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon])
+    return Company(id: random, name: "company_\(random)", email: "company_\(random)@email.com", password: "pass\(random)"/*, coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon]*/)
 }
 var randomCustomer: Customer {
-    return Customer(id: random, firstName: "firstName_\(random)", lastName: "lastName_\(random)", email: "customer_\(random)@mail.com", password: "pass_\(random)", coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon])
+    return Customer(id: random, firstName: "firstName_\(random)", lastName: "lastName_\(random)", email: "customer_\(random)@mail.com", password: "pass_\(random)"/*, coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon, randomCoupon]*/)
 }
 let mockCompanies = [
     randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany

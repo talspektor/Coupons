@@ -91,8 +91,8 @@ enum AdminEndPoint: EndPointType {
             let params: Parameters = [
                 "name": company.name,
                 "email": company.email,
-                "password": company.password,
-                "coupons": company.coupons
+                "password": company.password/*,
+                "coupons": company.coupons*/
             ]
             return .requestParametest(bodyParameters: params, urlParanatars: nil)
         case .addCustomer(let customer):
@@ -100,8 +100,8 @@ enum AdminEndPoint: EndPointType {
                 "firstName": customer.firstName,
                 "lastName": customer.lastName,
                 "email": customer.email,
-                "password": customer.password,
-                "coupons": customer.coupons
+                "password": customer.password/*,
+                "coupons": customer.coupons*/
             ]
             return .requestParametest(bodyParameters: params, urlParanatars: nil)
         case .deleteCompany:
@@ -123,8 +123,8 @@ enum AdminEndPoint: EndPointType {
                 "id": company.id,
                 "name": company.name,
                 "email": company.email,
-                "password": company.password,
-                "coupons": company.coupons
+                "password": company.password/*,
+                "coupons": company.coupons*/
             ]
             return .requestParametest(bodyParameters: params, urlParanatars: nil)
         case .updateCustomer(let customer):
@@ -133,8 +133,8 @@ enum AdminEndPoint: EndPointType {
                 "firstName": customer.firstName,
                 "lastName": customer.lastName,
                 "email": customer.email,
-                "password": customer.password,
-                "coupons": customer.coupons
+                "password": customer.password/*,
+                "coupons": customer.coupons*/
             ]
              return .requestParametest(bodyParameters: params, urlParanatars: nil)
         }

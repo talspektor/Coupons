@@ -31,7 +31,7 @@ struct CustomerServiceImp: CustomerService {
         }
     }
     
-    func getAllCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+    func getAllCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void) {
         client.router.request(.getCoupons) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
@@ -58,7 +58,7 @@ struct CustomerServiceImp: CustomerService {
         }
     }
     
-    func getCustomerCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+    func getCustomerCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void) {
         client.router.request(.getCustomerCoupons) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
@@ -103,7 +103,7 @@ struct CustomerServiceImp: CustomerService {
         }
     }
     
-    func getCoupons(categoty: Category, completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+    func getCoupons(categoty: Category, completion: @escaping (Result<[Coupon], Error>) -> Void) {
         client.router.request(.getCouponsByCategury(categoty)) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
@@ -130,7 +130,7 @@ struct CustomerServiceImp: CustomerService {
         }
     }
     
-    func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+    func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon], Error>) -> Void) {
         client.router.request(.getCouponsPriceLessThen(maxPrice)) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))

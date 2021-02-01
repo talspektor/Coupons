@@ -85,7 +85,7 @@ struct CompanyServiceImp: CompanyService {
         }
     }
     
-    func getCoupons(completion: @escaping (Result<[Coupon]?, Error>) -> Void) {
+    func getCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void) {
         client.router.request(.getCoupons) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
@@ -139,7 +139,7 @@ struct CompanyServiceImp: CompanyService {
         }
     }
     
-    func getCompany(completion: @escaping (Result<Company?, Error>) -> Void) {
+    func getCompany(completion: @escaping (Result<Company, Error>) -> Void) {
         client.router.request(.getCompany) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))

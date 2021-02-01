@@ -13,5 +13,5 @@ struct Customer: Codable, Identifiable, Equatable {
     let lastName: String
     let email: String
     let password: String
-    let coupons: [Coupon]
+//    let coupons: [Coupon]
 }

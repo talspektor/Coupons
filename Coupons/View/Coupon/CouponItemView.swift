@@ -38,6 +38,6 @@ struct CouponItemView: View {
 
 struct CouponView_Previews: PreviewProvider {
     static var previews: some View {
-        CouponsForOrder()
+        CouponItemView(isForOrder: true, coupon: mockFoodCoupond[0])
     }
 }

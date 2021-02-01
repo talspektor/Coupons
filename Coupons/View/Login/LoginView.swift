@@ -12,8 +12,6 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     private var types: [UserType] = [.admin, .company, .customer]
-//    @State private var userType = ["Admin", "Company", "Customer"]
-//    @State private var selectedUserType = $user.$userType
     let verticalPaddingForFrom = 40.0
     var selection: String?
     
