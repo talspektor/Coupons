@@ -21,10 +21,10 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                 print("Data: \(String(describing: data))")
                 print("REQUEST BODY \(String(describing: request.httpBody))")
                 print("Error: \(String(describing: error))")
-                completion(data, response, error)
+                completion(NetworkResponseItem(data: data, response: response, error: error))
             })
         } catch {
-            completion(nil, nil, error)
+            completion(NetworkResponseItem(data: nil, response: nil, error: error))
         }
         self.task?.resume()
     }

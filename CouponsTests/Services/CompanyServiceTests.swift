@@ -32,8 +32,8 @@ class CompanyServiceTests: XCTestCase {
     
     func testAddCoupon() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "", email: "", password: ""/*, coupons: []*/)
-        let coupon = Coupon(id: 1, company: company, category: .ELECTRICITY, title: "ios", description: "ios", startDate: Date(), endDate: Date() + (10 * 60 * 60 * 24), amount: 5, price: 10, imageUrl: "")
+        let company = Company(id: 1, name: "", email: "", password: "")
+        let coupon = Coupon(id: 1, company: company, categoryId: Category.ELECTRICITY.rawValue, title: "ios1", description: "ios", startDate: Date().format(to: .serverDate), endDate: (Date() + (10 * 60 * 60 * 24)).format(to: .serverDate), amount: 5, price: 10, imageUrl: "")
         CompanyServiceImp.shared.addCoupon(coupon: coupon) { (result) in
             switch result {
             case .success(let isAdded):
@@ -49,8 +49,8 @@ class CompanyServiceTests: XCTestCase {
     
     func testUpdateCoupon() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "", email: "", password: ""/*, coupons: []*/)
-        let coupon = Coupon(id: 1, company: company, category: .ELECTRICITY, title: "ios", description: "ios", startDate: Date(), endDate: Date() + (10 * 60 * 60 * 24), amount: 5, price: 10, imageUrl: "")
+        let company = Company(id: 1, name: "", email: "", password: "")
+        let coupon = Coupon(id: 1, company: company, categoryId: Category.ELECTRICITY.rawValue, title: "ios", description: "ios", startDate: Date().format(to: .serverDate), endDate: (Date() + (10 * 60 * 60 * 24)).format(to: .serverDate), amount: 5, price: 10, imageUrl: "")
         CompanyServiceImp.shared.updateCoupon(coupon: coupon) { (result) in
             switch result {
             case .success(let isUpdated):
@@ -66,7 +66,7 @@ class CompanyServiceTests: XCTestCase {
     //test success 30.1.21
     func testDeleteCoupon() {
         let expectation = XCTestExpectation()
-        CompanyServiceImp.shared.deleteCoupon(id: 3) { (result) in
+        CompanyServiceImp.shared.deleteCoupon(id: 17) { (result) in
             switch result {
             case .success(let isDeleted):
                 assert(isDeleted, "deleteCoupon")
@@ -115,9 +115,8 @@ class CompanyServiceTests: XCTestCase {
         let expectation = XCTestExpectation()
         CompanyServiceImp.shared.getCompany { (result) in
             switch result {
-            case .success(let company):
+            case .success:
                 assert(true, "getCompany")
-                print(String(describing: company))
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "getCompanyl: \(error)")

@@ -53,7 +53,7 @@ var randomCategury: Category {
     }
 }
 var randomCoupon: Coupon {
-    return Coupon(id: random, company: randomCompany, category: randomCategury, title: "title_\(random)", description: "This is some generic coupon description...", startDate: Date(), endDate: Date() + 30, amount: randomAmount, price: randomPrice, imageUrl: "")
+    return Coupon(id: random, company: randomCompany, categoryId: randomCategury.rawValue, title: "title_\(random)", description: "This is some generic coupon description...", startDate: Date().format(to: .serverDate), endDate: (Date() + 30).format(to: .serverDate), amount: randomAmount, price: randomPrice, imageUrl: "")
 }
 var randomCompany: Company {
     return Company(id: random, name: "company_\(random)", email: "company_\(random)@email.com", password: "pass\(random)"/*, coupons: [randomCoupon, randomCoupon, randomCoupon, randomCoupon]*/)
@@ -72,37 +72,37 @@ let mockCustomers = [
 
 #if DEBUG
 let mockElecticityCoupons = [
-    Coupon(id: random, company: mockCompany, category: Category.ELECTRICITY, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "electricity"),
-    Coupon(id: random, company: mockCompany, category: Category.ELECTRICITY, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "electricity"),
-    Coupon(id: random, company: mockCompany, category: Category.ELECTRICITY, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "electricity"),
-    Coupon(id: random, company: mockCompany, category: Category.ELECTRICITY, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "electricity"),
-    Coupon(id: random, company: mockCompany, category: Category.ELECTRICITY, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "electricity"),
-    Coupon(id: random, company: mockCompany, category: Category.ELECTRICITY, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "electricity")
+    Coupon(id: random, company: mockCompany, categoryId: Category.ELECTRICITY.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "electricity"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.ELECTRICITY.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "electricity"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.ELECTRICITY.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "electricity"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.ELECTRICITY.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "electricity"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.ELECTRICITY.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "electricity"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.ELECTRICITY.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "electricity")
 ]
 let mockFoodCoupond = [
-    Coupon(id: random, company: mockCompany, category: Category.FOOD, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "food"),
-    Coupon(id: random, company: mockCompany, category: Category.FOOD, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "food"),
-    Coupon(id: random, company: mockCompany, category: Category.FOOD, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "food"),
-    Coupon(id: random, company: mockCompany, category: Category.FOOD, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "food"),
-    Coupon(id: random, company: mockCompany, category: Category.FOOD, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "food"),
-    Coupon(id: random, company: mockCompany, category: Category.FOOD, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "food")
+    Coupon(id: random, company: mockCompany, categoryId: Category.FOOD.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "food"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.FOOD.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "food"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.FOOD.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "food"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.FOOD.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "food"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.FOOD.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "food"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.FOOD.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "food")
 ]
 let mockSportsCouopns = [
-    Coupon(id: random, company: mockCompany, category: Category.SPORTS, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "sports"),
-    Coupon(id: random, company: mockCompany, category: Category.SPORTS, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "sports"),
-    Coupon(id: random, company: mockCompany, category: Category.SPORTS, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "sports"),
-    Coupon(id: random, company: mockCompany, category: Category.SPORTS, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "sports"),
-    Coupon(id: random, company: mockCompany, category: Category.SPORTS, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "sports"),
-    Coupon(id: random, company: mockCompany, category: Category.SPORTS, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "sports")
+    Coupon(id: random, company: mockCompany, categoryId: Category.SPORTS.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "sports"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.SPORTS.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "sports"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.SPORTS.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "sports"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.SPORTS.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "sports"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.SPORTS.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "sports"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.SPORTS.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "sports")
 
 ]
 let mockVacationCoupons = [
-    Coupon(id: random, company: mockCompany, category: Category.VACATION, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "vacation"),
-    Coupon(id: random, company: mockCompany, category: Category.VACATION, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "vacation"),
-    Coupon(id: random, company: mockCompany, category: Category.VACATION, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "vacation"),
-    Coupon(id: random, company: mockCompany, category: Category.VACATION, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "vacation"),
-    Coupon(id: random, company: mockCompany, category: Category.VACATION, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "vacation"),
-    Coupon(id: random, company: mockCompany, category: Category.VACATION, title: "title", description: "descript", startDate: Date(), endDate: Date(), amount: 10, price: 200, imageUrl: "vacation")
+    Coupon(id: random, company: mockCompany, categoryId: Category.VACATION.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "vacation"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.VACATION.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "vacation"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.VACATION.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "vacation"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.VACATION.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "vacation"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.VACATION.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "vacation"),
+    Coupon(id: random, company: mockCompany, categoryId: Category.VACATION.rawValue, title: "title", description: "descript", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 10, price: 200, imageUrl: "vacation")
 ]
 let electricityCategoryCoupons = CategoryCoupons(id: Category.ELECTRICITY.hashValue, category: Category.ELECTRICITY, coupons: mockElecticityCoupons)
 let foodCategoryCoupons = CategoryCoupons(id: Category.FOOD.hashValue, category: Category.FOOD, coupons: mockFoodCoupond)

@@ -14,10 +14,10 @@ class CustomerServiceTests: XCTestCase {
         super.setUp()
         testLogin()
     }
-    //tested :) 29.1.2021
+
     func testLogin() {
         let expectation = XCTestExpectation()
-        CustomerServiceImp.shared.login(email: "test_ios1", password: "test_ios1") { (result) in
+        CustomerServiceImp.shared.login(email: "customer_1@email.com", password: "pass_1") { (result) in
             switch result {
             case .success(let isLoggedIn):
                 assert(isLoggedIn, "login")
@@ -49,9 +49,8 @@ class CustomerServiceTests: XCTestCase {
         let expectation = XCTestExpectation()
         CustomerServiceImp.shared.getCustomerCoupons { (result) in
             switch result {
-            case .success(let coupons):
+            case .success:
                 assert(true, "Get customer coupons")
-                print(String(describing: coupons))
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Get customer coupons fail: \(error)")
@@ -60,7 +59,7 @@ class CustomerServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.2021
+
     func testPurchaseCoupon() {
         let expectation = XCTestExpectation()
         CustomerServiceImp.shared.purchaseCoupon(id: 15) { (result) in
@@ -80,9 +79,8 @@ class CustomerServiceTests: XCTestCase {
         let expectation = XCTestExpectation()
         CustomerServiceImp.shared.getCoupons(categoty: .ELECTRICITY) { (result) in
             switch result {
-            case .success(let coupons):
+            case .success:
                 assert(true, "get couponsByCategory")
-                print(String(describing: coupons))
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "get couponsByCategory fail: \(error)")
@@ -94,14 +92,12 @@ class CustomerServiceTests: XCTestCase {
     
     func testGetCouponsByMaxPrice() {
         let expectation = XCTestExpectation()
-        CustomerServiceImp.shared.getCoupons(maxPrice: 10) { (result) in
+        CustomerServiceImp.shared.getCoupons(maxPrice: 100) { (result) in
             switch result {
-            case .success(let coupons):
+            case .success:
                 assert(true, "getCoupons")
-                print(String(describing: coupons))
                 expectation.fulfill()
             case .failure(let error):
-
                 assert(false, "getCoupons fail: \(error)")
                 expectation.fulfill()
             }
@@ -113,9 +109,8 @@ class CustomerServiceTests: XCTestCase {
         let expectation = XCTestExpectation()
         CustomerServiceImp.shared.getCustomer { (result) in
             switch result {
-            case .success(let coupons):
+            case .success:
                 assert(true, "getCustomer")
-                print(String(describing: coupons))
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "getCustomer fail: \(error)")

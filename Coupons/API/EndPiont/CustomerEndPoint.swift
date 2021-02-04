@@ -32,9 +32,9 @@ enum CustomerEndPoint: EndPointType {
         case .getCoupons:
             return "/coupons"
         case .getCouponsByCategury(let category):
-            return "/customer/coupons/\(category)"
+            return "/customer/coupons/category/\(category)"
         case .getCouponsPriceLessThen(let maxPrice):
-            return "/customer/coupons/\(maxPrice)"
+            return "/customer/coupons/maxPrice/\(maxPrice)"
         case .getCustoemr:
             return "/customer"
         }

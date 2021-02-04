@@ -43,12 +43,12 @@ class CustomerObservable: ObservableObject {
     }
     
     func add(coupon: Coupon) {
-        var categoryCouopns = coupons?.first { $0.category == coupon.category }
+        var categoryCouopns = coupons?.first { $0.category.rawValue == coupon.categoryId }
         categoryCouopns?.coupons.append(coupon)
     }
     
     func addToMyCoupons(coupon: Coupon) {
-        var categoryCouopns = myCouopns?.first { $0.category == coupon.category }
+        var categoryCouopns = myCouopns?.first { $0.category.rawValue == coupon.categoryId }
         categoryCouopns?.coupons.append(coupon)
     }
     //TODO: get coupons from REST API

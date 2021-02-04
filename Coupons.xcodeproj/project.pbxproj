@@ -38,6 +38,11 @@
 		435B20BA25C5B87800539A40 /* CustomerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B20B925C5B87800539A40 /* CustomerHomeView.swift */; };
 		435B20BE25C5B8B200539A40 /* AdminHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B20BD25C5B8B200539A40 /* AdminHomeView.swift */; };
 		435B20C225C5B8D700539A40 /* ComapnyHameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B20C125C5B8D700539A40 /* ComapnyHameView.swift */; };
+		438D050725CAC0270073CDE1 /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D050625CAC0270073CDE1 /* JSONDecoder+Extension.swift */; };
+		438D050C25CAC2180073CDE1 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D050B25CAC2180073CDE1 /* ResponseHandler.swift */; };
+		438D051425CAD9440073CDE1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051325CAD9440073CDE1 /* DateFormatter.swift */; };
+		438D051825CB3CEE0073CDE1 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */; };
+		438D052625CBCDB00073CDE1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D052525CBCDB00073CDE1 /* String+Extension.swift */; };
 		43A2E7B425BE89A200B531DF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7B325BE89A200B531DF /* NetworkManager.swift */; };
 		43A2E7BD25BE8CBB00B531DF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */; };
 		43A2E7C225BE8DD500B531DF /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */; };
@@ -119,6 +124,11 @@
 		435B20B925C5B87800539A40 /* CustomerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeView.swift; sourceTree = "<group>"; };
 		435B20BD25C5B8B200539A40 /* AdminHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeView.swift; sourceTree = "<group>"; };
 		435B20C125C5B8D700539A40 /* ComapnyHameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComapnyHameView.swift; sourceTree = "<group>"; };
+		438D050625CAC0270073CDE1 /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
+		438D050B25CAC2180073CDE1 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		438D051325CAD9440073CDE1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
+		438D052525CBCDB00073CDE1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		43A2E7B325BE89A200B531DF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -324,9 +334,26 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		438D050525CABFE30073CDE1 /* Decoding */ = {
+			isa = PBXGroup;
+			children = (
+				438D050625CAC0270073CDE1 /* JSONDecoder+Extension.swift */,
+			);
+			path = Decoding;
+			sourceTree = "<group>";
+		};
+		438D050A25CAC1FE0073CDE1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				438D050B25CAC2180073CDE1 /* ResponseHandler.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		43A2E7B225BE898700B531DF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				438D050525CABFE30073CDE1 /* Decoding */,
 				43A2E7D025BE92CB00B531DF /* Service */,
 				43A2E7CF25BE929700B531DF /* Manager */,
 				43A2E7C725BE8EFD00B531DF /* Encoding */,
@@ -350,6 +377,7 @@
 				43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */,
 				43A2E7C825BE8F1D00B531DF /* URLParameterEncoder.swift */,
 				43A2E7CC25BE91B200B531DF /* JSONParameterEncoder.swift */,
+				438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */,
 			);
 			path = Encoding;
 			sourceTree = "<group>";
@@ -374,11 +402,14 @@
 		43A2E7E025BEA19C00B531DF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				438D050A25CAC1FE0073CDE1 /* Response */,
 				43E6165F25C7C85B004A839D /* Error */,
 				435B201525C2C2FF00539A40 /* Repository */,
 				43A2E80025BEC4C200B531DF /* EndPiont */,
 				43A2E7FA25BEC46800B531DF /* Client */,
 				43A2E7E525BEAB3600B531DF /* Services */,
+				438D051325CAD9440073CDE1 /* DateFormatter.swift */,
+				438D052525CBCDB00073CDE1 /* String+Extension.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -665,6 +696,9 @@
 				43283F9525BB0E16002DDD08 /* AppDelegate.swift in Sources */,
 				43283F8625BB0DDB002DDD08 /* ContentView.swift in Sources */,
 				435B201725C2C31B00539A40 /* Repository.swift in Sources */,
+				438D051425CAD9440073CDE1 /* DateFormatter.swift in Sources */,
+				438D050725CAC0270073CDE1 /* JSONDecoder+Extension.swift in Sources */,
+				438D051825CB3CEE0073CDE1 /* JSONEncoder+Extension.swift in Sources */,
 				435B200B25C2B0AA00539A40 /* HomeView.swift in Sources */,
 				43B0A6AF25BC7A9200C3AC08 /* CompanyDetailsView.swift in Sources */,
 				43283FB325BB0EC8002DDD08 /* CheckoutView.swift in Sources */,
@@ -676,6 +710,7 @@
 				43A2E7FC25BEC47600B531DF /* AdminClient.swift in Sources */,
 				43A2E7B425BE89A200B531DF /* NetworkManager.swift in Sources */,
 				43283FAB25BB0E97002DDD08 /* CouponDetail.swift in Sources */,
+				438D052625CBCDB00073CDE1 /* String+Extension.swift in Sources */,
 				43A2E81325BED0C800B531DF /* CustomerClient.swift in Sources */,
 				43E6166125C7C88D004A839D /* ErrorFetchDataAlertView.swift in Sources */,
 				43283FC225BB0EF8002DDD08 /* Company.swift in Sources */,
@@ -693,6 +728,7 @@
 				43283F8425BB0DDB002DDD08 /* CouponsApp.swift in Sources */,
 				43A2E81C25BEEB3C00B531DF /* CustomerServiceImp.swift in Sources */,
 				43283FB425BB0EC8002DDD08 /* OrderView.swift in Sources */,
+				438D050C25CAC2180073CDE1 /* ResponseHandler.swift in Sources */,
 				43B0A6AB25BC7A7700C3AC08 /* CustomerDetailsView.swift in Sources */,
 				43B0A6B225BC7B8100C3AC08 /* CompanyItemView.swift in Sources */,
 				43A2E82225BEF02D00B531DF /* CompanyServiceImp.swift in Sources */,

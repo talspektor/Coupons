@@ -12,8 +12,9 @@ class AdminServicesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        testLogin()
     }
-    
+
     func testLogin() {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.login(email: "com.admin@admin", password: "admin") { (result) in
@@ -28,7 +29,7 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    
+
     func testGetCompanies() {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.getCompanies { (result) in
@@ -43,14 +44,13 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    
+
     func testGetCustomers() {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.getCustomers { (result) in
             switch result {
-            case .success(let customers):
-                assert(true, "Get Customer: \(customers)")
-                print("\(customers)")
+            case .success:
+                assert(true, "Get Customer")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Get Customer fail erorr: \(error)")
@@ -59,14 +59,13 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.2021
+
     func testGetCompanyById() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.getCompany(id: 25) { (result) in
+        AdminServiceImp.shared.getCompany(id: 1) { (result) in
             switch result {
-            case .success(let company):
-                assert(true, "Get Company: \(company)")
-                print("\(company)")
+            case .success:
+                assert(true, "Get Company")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Get Company fail erorr: \(error)")
@@ -75,14 +74,13 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.2021
+
     func testGetCompanyByName() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.getCompany(name: "companyName_804") { (result) in
+        AdminServiceImp.shared.getCompany(name: "company_2") { (result) in
             switch result {
-            case .success(let company):
-                assert(true, "Get Company by name: \(company)")
-                print("\(company)")
+            case .success:
+                assert(true, "Get Company by name")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Get Company by name fail erorr: \(error)")
@@ -91,14 +89,13 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.2021
+
     func testGetCustomerById() {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.getCustomer(id: 14) { (result) in
             switch result {
-            case .success(let customer):
-                assert(true, "Get Customer: \(customer)")
-                print("\(customer)")
+            case .success:
+                assert(true, "Get Customer")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Get Customer fail: \(error)")
@@ -107,10 +104,10 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.21
+
     func testAddCompany() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "test_ios", email: "test_ios", password: "test_ios"/*, coupons: []*/)
+        let company = Company(id: 1, name: "test_ios4", email: "test_ios4", password: "test_ios3"/*, coupons: []*/)
         AdminServiceImp.shared.addCompany(company: company) { (result) in
             switch result {
             case .success(let isAdded):
@@ -123,10 +120,10 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.21
+
     func testAddCustomer() {
         let expectation = XCTestExpectation()
-        let customer = Customer(id: 1, firstName: "test_ios", lastName: "test_ios", email: "test_ios", password: "test_ios"/*, coupons: []*/)
+        let customer = Customer(id: 1, firstName: "test_ios3", lastName: "test_ios3", email: "test_ios3", password: "test_ios3")
         AdminServiceImp.shared.addCustomer(customer: customer) { (result) in
             switch result {
             case .success(let isCustomerAdded):
@@ -139,10 +136,10 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.21
+
     func testUpdateCustomer() {
         let expectation = XCTestExpectation()
-        let customer = Customer(id: 18, firstName: "test_ios1", lastName: "test_ios1", email: "test_ios1", password: "test_ios1"/*, coupons: []*/)
+        let customer = Customer(id: 18, firstName: "test_ios11", lastName: "test_ios11", email: "test_ios10", password: "test_ios10")
         AdminServiceImp.shared.updateCustomer(customer: customer) { (result) in
             switch result {
             case .success(let isCustomerUpdated):
@@ -155,10 +152,10 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.21
+
     func testUpdateComany() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 30, name: "test_ios1", email: "test_ios1", password: "test_ios1"/*, coupons: []*/)
+        let company = Company(id: 30, name: "test_ios11", email: "test_ios11", password: "test_ios1")
         AdminServiceImp.shared.updateCompany(company: company) { (result) in
             switch result {
             case .success(let isCompanyUpdated):
@@ -171,10 +168,10 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.21
+
     func testDeleteComapny() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.deleteCompany(id: 29) { (result) in
+        AdminServiceImp.shared.deleteCompany(id: 28) { (result) in
             switch result {
             case .success(let isDeleted):
                 assert(isDeleted, "delete company")
@@ -186,7 +183,7 @@ class AdminServicesTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //tested :) 29.1.21
+
     func testDeleteCustomer() {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.deleteCustomer(id: 17) { (result) in

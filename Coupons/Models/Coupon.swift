@@ -13,11 +13,11 @@ struct Coupon: Codable, Equatable, Identifiable, Hashable {
     }
     let id: Int
     var company: Company
-    var category: Category
+    var categoryId: Category.RawValue
     var title: String
     var description: String
-    var startDate: Date
-    var endDate: Date
+    var startDate: String
+    var endDate: String
     var amount: Int
     var price: Double
     var imageUrl: String

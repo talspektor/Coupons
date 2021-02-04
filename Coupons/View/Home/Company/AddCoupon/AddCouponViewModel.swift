@@ -9,11 +9,23 @@ import SwiftUI
 
 extension AddCouponView {
     class AddCouponViewModel: ObservableObject {
-        @Published var coupon: Coupon = Coupon(id: 1, company: randomCompany, category: Category.ELECTRICITY, title: "", description: "", startDate: Date(), endDate: Date(), amount: 0, price: 0, imageUrl: "")
+        @Published var coupon: Coupon = Coupon(id: 1, company: randomCompany, categoryId: Category.ELECTRICITY.rawValue, title: "", description: "", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 0, price: 0, imageUrl: "")
         @Published private(set) var sholdDismiss: Bool = false
         @Published private(set) var shouldShowAlert = false
         
         private var service = CompanyServiceImp.shared
+        
+        var startDate: Date = Date() {
+            didSet {
+                coupon.startDate = startDate.format(to: .serverDate)
+            }
+        }
+        
+        var endDate: Date = Date() {
+            didSet {
+                coupon.endDate = endDate.format(to: .serverDate)
+            }
+        }
         
         var title = "" {
             didSet {

@@ -15,9 +15,8 @@ struct Company: Codable, Identifiable, Equatable {
     let name: String
     let email: String
     let password: String
-//    let coupons: [Coupon]
 }
 
 #if DEBUG
-let mockCompany = Company(id: 1, name: "conp", email: "comp@mail.com", password: "pass123"/*, coupons: [Coupon]()*/)
+let mockCompany = Company(id: 1, name: "conp", email: "comp@mail.com", password: "pass123")
 #endif

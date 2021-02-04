@@ -14,267 +14,98 @@ struct AdminServiceImp: AdminService {
     let client = AdminCilent()
     
     func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void) {
-        client.router.request(.login(email, password)) { data, response, error in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    completion(.success(true))
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.login(email, password)) { responseItem in
+            ResponseHandler.handle(responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func getCustomers(completion: @escaping (Result<[Customer], Error>) -> Void) {
-        client.router.request(.getCustomers) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    guard let responseData = data else {
-                        completion(.failure(NetworkResponse.noData))
-                        return
-                    }
-                    do {
-                        let apiResponse = try JSONDecoder().decode([Customer].self, from: responseData)
-                        completion(.success(apiResponse))
-                    } catch {
-                        completion(.failure(NetworkResponse.uableToDecode))
-                    }
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.getCustomers) { responseItem in
+            ResponseHandler.handleWithDecoding([Customer].self ,responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func getCompanies(completion: @escaping (Result<[Company], Error>) -> Void) {
-        client.router.request(.getCompanies) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    guard let responseData = data else {
-                        completion(.failure(NetworkResponse.noData))
-                        return
-                    }
-                    do {
-                        let apiResponse = try JSONDecoder().decode([Company].self, from: responseData)
-                        completion(.success(apiResponse))
-                    } catch {
-                        completion(.failure(NetworkResponse.uableToDecode))
-                    }
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.getCompanies) { responseItem in
+            ResponseHandler.handleWithDecoding([Company].self ,responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func addCompany(company: Company, completion: @escaping (Result<Bool, Error>) -> Void) {
-        client.router.request(.addComapny(company)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    completion(.success(true))
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.addComapny(company)) { responseItem in
+            ResponseHandler.handle(responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func updateCompany(company: Company, completion: @escaping (Result<Bool, Error>) -> Void) {
-        client.router.request(.updateCompany(company)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    completion(.success(true))
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.updateCompany(company)) { responseItem in
+            ResponseHandler.handle(responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func deleteCompany(id: Int, completion: @escaping (Result<Bool, Error>) -> Void) {
-        client.router.request(.deleteCompany(id)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    completion(.success(true))
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.deleteCompany(id)) { responseItem in
+            ResponseHandler.handle(responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func getCompany(id: Int, completion: @escaping (Result<Company, Error>) -> Void) {
-        client.router.request(.getCompany(id)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    guard let responseData = data else {
-                        completion(.failure(NetworkResponse.noData))
-                        return
-                    }
-                    do {
-                        let apiResponse = try JSONDecoder().decode(Company.self, from: responseData)
-                        completion(.success(apiResponse))
-                    } catch {
-                        completion(.failure(NetworkResponse.uableToDecode))
-                    }
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.getCompany(id)) { responseItem in
+            ResponseHandler.handleWithDecoding(Company.self ,responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func getCompany(name: String, completion: @escaping (Result<Company, Error>) -> Void) {
-        client.router.request(.getCompanyByName(name)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    guard let responseData = data else {
-                        completion(.failure(NetworkResponse.noData))
-                        return
-                    }
-                    do {
-                        let apiResponse = try JSONDecoder().decode(Company.self, from: responseData)
-                        completion(.success(apiResponse))
-                    } catch {
-                        completion(.failure(NetworkResponse.uableToDecode))
-                    }
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.getCompanyByName(name)) { responseItem in
+            ResponseHandler.handleWithDecoding(Company.self ,responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func addCustomer(customer: Customer, completion: @escaping (Result<Bool, Error>) -> Void) {
-        client.router.request(.addCustomer(customer)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    completion(.success(true))
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.addCustomer(customer)) { responseItem in
+            ResponseHandler.handle(responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func updateCustomer(customer: Customer, completion: @escaping (Result<Bool, Error>) -> Void) {
-        client.router.request(.updateCustomer(customer)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    completion(.success(true))
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.updateCustomer(customer)) { responseItem in
+            ResponseHandler.handle(responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func deleteCustomer(id: Int, completion: @escaping (Result<Bool, Error>) -> Void) {
-        client.router.request(.deleteCustomer(id)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    completion(.success(true))
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.deleteCustomer(id)) { responseItem in
+            ResponseHandler.handle(responseItem) { (result) in
+                completion(result)
             }
         }
     }
     
     func getCustomer(id: Int, completion: @escaping (Result<Customer, Error>) -> Void) {
-        client.router.request(.getCustomer(id)) { (data, response, error) in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            if let response = response as? HTTPURLResponse {
-                let result = NetworkManager.shared.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    guard let responseData = data else {
-                        completion(.failure(NetworkResponse.noData))
-                        return
-                    }
-                    do {
-                        let apiResponse = try JSONDecoder().decode(Customer.self, from: responseData)
-                        completion(.success(apiResponse))
-                    } catch {
-                        completion(.failure(NetworkResponse.uableToDecode))
-                    }
-                case .failure(let nenworkFailureError):
-                    completion(.failure(nenworkFailureError))
-                }
+        client.router.request(.getCustomer(id)) { responseItem in
+            ResponseHandler.handleWithDecoding(Customer.self ,responseItem) { (result) in
+                completion(result)
             }
         }
     }
-    
-    
-    
-    
 }

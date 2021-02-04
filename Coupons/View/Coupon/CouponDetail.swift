@@ -36,7 +36,7 @@ struct CouponDetail: View {
                         .padding([.leading, .top])
                 }
                     
-                Text("Expiration: \(formatter.string(from: coupon.endDate))")
+                Text("Expiration: \(coupon.endDate)")
                     .padding([.leading, .top])
                 
                 Spacer()

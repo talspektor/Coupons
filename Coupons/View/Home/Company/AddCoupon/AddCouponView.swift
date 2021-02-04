@@ -22,7 +22,7 @@ struct AddCouponView: View {
                     .fontWeight(.bold)
                     .font(.title)
                 TextField("Title", text: $viewModel.title)
-                Picker("Category", selection: $viewModel.coupon.category) {
+                Picker("Category", selection: $viewModel.coupon.categoryId) {
                     ForEach(0..<self.categories.count) {
                         Text(self.categories[$0].rawValue)
                     }.pickerStyle(SegmentedPickerStyle())
@@ -32,8 +32,8 @@ struct AddCouponView: View {
                     .keyboardType(.numberPad)
                 TextField("Price", text: $viewModel.price)
                     .keyboardType(.numberPad)
-                DatePicker("Start Date", selection: $viewModel.coupon.startDate)
-                DatePicker("End Date", selection: $viewModel.coupon.endDate)
+                DatePicker("Start Date", selection: $viewModel.startDate)
+                DatePicker("End Date", selection: $viewModel.endDate)
                 TextField("Image url", text: $viewModel.coupon.imageUrl)
                 
                 Button {

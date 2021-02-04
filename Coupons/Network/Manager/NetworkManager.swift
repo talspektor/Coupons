@@ -15,6 +15,7 @@ enum NetworkResponse: Error {
     case failed
     case noData
     case uableToDecode
+    case responseError
     
     var desscription: String {
         switch self {
@@ -32,6 +33,8 @@ enum NetworkResponse: Error {
             return "Response returned with no data to decode."
         case .uableToDecode:
             return "We could not decode the response."
+        case .responseError:
+            return "Response Error..."
         }
     }
 }

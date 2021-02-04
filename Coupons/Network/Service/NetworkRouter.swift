@@ -6,7 +6,12 @@
 //
 
 import Foundation
-typealias NetworkRouterCompletion = (_ data: Data?, _ responce: URLResponse?, _ error: Error?) -> Void
+struct NetworkResponseItem {
+    let data: Data?
+    let response: URLResponse?
+    let error: Error?
+}
+typealias NetworkRouterCompletion = (_ responseItem: NetworkResponseItem) -> Void
 protocol NetworkRouter: class {
     associatedtype EndPoint: EndPointType
     func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion)
