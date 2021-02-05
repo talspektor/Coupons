@@ -39,16 +39,14 @@ enum NetworkResponse: Error {
     }
 }
 
-class NetworkManager {
-    
-    static let shared = NetworkManager()
-    
+struct NetworkResponseHandler {
+
     enum Result<String> {
         case success
         case failure(String)
     }
 
-    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<NetworkResponse> {
+    static func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<NetworkResponse> {
         switch response.statusCode {
         case 200...299: return .success
         case 401...500: return .failure(NetworkResponse.authenticationError)

@@ -11,15 +11,15 @@ struct AppView: View {
     @EnvironmentObject var user: CustomerObservable
     
     var body: some View {
-//        if user.useMockData {
-//            HomeView()
-//        } else {
+        if user.useMockData {
+            HomeView()
+        } else {
             if user.isLoggedIn {
                 HomeView()
             } else {
                 LoginView()
             }
-//        }
+        }
     }
 }
 

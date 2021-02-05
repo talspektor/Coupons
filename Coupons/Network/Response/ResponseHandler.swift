@@ -18,7 +18,7 @@ struct ResponseHandler {
             return
         }
         
-        let result = NetworkManager.shared.handleNetworkResponse(response)
+        let result = NetworkResponseHandler.handleNetworkResponse(response)
         switch result {
         case .success:
             completion(.success(true))
@@ -29,15 +29,17 @@ struct ResponseHandler {
     
     static func handleWithDecoding<T: Decodable>(_ type: T.Type, _ responseItem: NetworkResponseItem, completion: (Result<T, Error>) -> Void) {
         guard responseItem.error == nil else {
+            print("\n<<<<< Error: \(responseItem.error!)\n")
             completion(.failure(responseItem.error!))
             return
         }
         guard let response = responseItem.response as? HTTPURLResponse else {
+            print("\n<<<<< Error: \(responseItem.error!)\n")
             completion(.failure(responseItem.error!))
             return
         }
         
-        let result = NetworkManager.shared.handleNetworkResponse(response)
+        let result = NetworkResponseHandler.handleNetworkResponse(response)
         switch result {
         case .success:
             guard let responseData = responseItem.data else {
@@ -47,7 +49,7 @@ struct ResponseHandler {
             do {
                 let apiResponse = try JSONDecoder().decode(with: T.self, from: responseData)
                 completion(.success(apiResponse))
-                print("\nResponse JSON: \(apiResponse)\n")
+                print("\n<<<<< Response JSON: \(apiResponse)\n")
             } catch {
                 print(error)
                 completion(.failure(error))

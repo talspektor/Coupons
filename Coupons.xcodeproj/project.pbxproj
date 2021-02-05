@@ -40,10 +40,11 @@
 		435B20C225C5B8D700539A40 /* ComapnyHameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B20C125C5B8D700539A40 /* ComapnyHameView.swift */; };
 		438D050725CAC0270073CDE1 /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D050625CAC0270073CDE1 /* JSONDecoder+Extension.swift */; };
 		438D050C25CAC2180073CDE1 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D050B25CAC2180073CDE1 /* ResponseHandler.swift */; };
-		438D051425CAD9440073CDE1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051325CAD9440073CDE1 /* DateFormatter.swift */; };
+		438D051425CAD9440073CDE1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051325CAD9440073CDE1 /* Date+Extension.swift */; };
 		438D051825CB3CEE0073CDE1 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */; };
 		438D052625CBCDB00073CDE1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D052525CBCDB00073CDE1 /* String+Extension.swift */; };
-		43A2E7B425BE89A200B531DF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7B325BE89A200B531DF /* NetworkManager.swift */; };
+		438D055425CD95F00073CDE1 /* ResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D055325CD95F00073CDE1 /* ResponseItem.swift */; };
+		43A2E7B425BE89A200B531DF /* NetworkResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7B325BE89A200B531DF /* NetworkResponseHandler.swift */; };
 		43A2E7BD25BE8CBB00B531DF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */; };
 		43A2E7C225BE8DD500B531DF /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */; };
 		43A2E7C525BE8E7B00B531DF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C425BE8E7B00B531DF /* NetworkError.swift */; };
@@ -76,6 +77,8 @@
 		43E616B125C830FE004A839D /* AdminHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E616B025C830FE004A839D /* AdminHomeViewModel.swift */; };
 		43E616C725C8611C004A839D /* AddCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E616C625C8611C004A839D /* AddCouponView.swift */; };
 		43E616CD25C8625F004A839D /* AddCouponViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E616CC25C8625F004A839D /* AddCouponViewModel.swift */; };
+		A8D48A46A873ADC19B9EBF90 /* Pods_Coupons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56FFD26CB4667BBD7B6961A /* Pods_Coupons.framework */; };
+		AD789987FF65E36FA68088DD /* Pods_CouponsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8852FF333640054116DD06C1 /* Pods_CouponsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		133D7CEAC0EDCAA57C816D11 /* Pods-Coupons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coupons.release.xcconfig"; path = "Target Support Files/Pods-Coupons/Pods-Coupons.release.xcconfig"; sourceTree = "<group>"; };
+		163B9DA7DCD4910A2067340E /* Pods-CouponsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponsTests.release.xcconfig"; path = "Target Support Files/Pods-CouponsTests/Pods-CouponsTests.release.xcconfig"; sourceTree = "<group>"; };
 		43283F8025BB0DDB002DDD08 /* Coupons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coupons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43283F8325BB0DDB002DDD08 /* CouponsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsApp.swift; sourceTree = "<group>"; };
 		43283F8525BB0DDB002DDD08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,10 +131,11 @@
 		435B20C125C5B8D700539A40 /* ComapnyHameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComapnyHameView.swift; sourceTree = "<group>"; };
 		438D050625CAC0270073CDE1 /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
 		438D050B25CAC2180073CDE1 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
-		438D051325CAD9440073CDE1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		438D051325CAD9440073CDE1 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
 		438D052525CBCDB00073CDE1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		43A2E7B325BE89A200B531DF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		438D055325CD95F00073CDE1 /* ResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseItem.swift; sourceTree = "<group>"; };
+		43A2E7B325BE89A200B531DF /* NetworkResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseHandler.swift; sourceTree = "<group>"; };
 		43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		43A2E7C425BE8E7B00B531DF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -162,6 +168,10 @@
 		43E616B025C830FE004A839D /* AdminHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewModel.swift; sourceTree = "<group>"; };
 		43E616C625C8611C004A839D /* AddCouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponView.swift; sourceTree = "<group>"; };
 		43E616CC25C8625F004A839D /* AddCouponViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponViewModel.swift; sourceTree = "<group>"; };
+		5D44EC6FDAE04526659F88D5 /* Pods-CouponsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponsTests.debug.xcconfig"; path = "Target Support Files/Pods-CouponsTests/Pods-CouponsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		67733C641B72DC7E8EEE1379 /* Pods-Coupons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coupons.debug.xcconfig"; path = "Target Support Files/Pods-Coupons/Pods-Coupons.debug.xcconfig"; sourceTree = "<group>"; };
+		8852FF333640054116DD06C1 /* Pods_CouponsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouponsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A56FFD26CB4667BBD7B6961A /* Pods_Coupons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coupons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D48A46A873ADC19B9EBF90 /* Pods_Coupons.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,18 +187,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD789987FF65E36FA68088DD /* Pods_CouponsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15503B90A2D6927E916B7CF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67733C641B72DC7E8EEE1379 /* Pods-Coupons.debug.xcconfig */,
+				133D7CEAC0EDCAA57C816D11 /* Pods-Coupons.release.xcconfig */,
+				5D44EC6FDAE04526659F88D5 /* Pods-CouponsTests.debug.xcconfig */,
+				163B9DA7DCD4910A2067340E /* Pods-CouponsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		43283F7725BB0DDB002DDD08 = {
 			isa = PBXGroup;
 			children = (
 				43283F8225BB0DDB002DDD08 /* Coupons */,
 				435B206225C2DDC500539A40 /* CouponsTests */,
 				43283F8125BB0DDB002DDD08 /* Products */,
+				15503B90A2D6927E916B7CF6 /* Pods */,
+				C5740BF0BFD43CA6C3F59BF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,9 +234,9 @@
 				43283F9325BB0E04002DDD08 /* App */,
 				43283F8525BB0DDB002DDD08 /* ContentView.swift */,
 				43283F9A25BB0E57002DDD08 /* AppView.swift */,
+				43283FBA25BB0EED002DDD08 /* Models */,
 				43283FA025BB0E68002DDD08 /* View */,
 				43283FB625BB0ED7002DDD08 /* MockData */,
-				43283FBA25BB0EED002DDD08 /* Models */,
 				43283FC725BB0F07002DDD08 /* Resources */,
 				43283F8C25BB0DDC002DDD08 /* Info.plist */,
 				43283F8925BB0DDC002DDD08 /* Preview Content */,
@@ -239,6 +264,7 @@
 		43283FA025BB0E68002DDD08 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				43E6165F25C7C85B004A839D /* Error */,
 				43E6167A25C7FCEA004A839D /* Utils */,
 				43E6168525C82742004A839D /* Coupon */,
 				435B200925C2B09A00539A40 /* Home */,
@@ -345,9 +371,18 @@
 		438D050A25CAC1FE0073CDE1 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				438D050B25CAC2180073CDE1 /* ResponseHandler.swift */,
+				438D055325CD95F00073CDE1 /* ResponseItem.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		438D053325CC4C560073CDE1 /* DateFormat */ = {
+			isa = PBXGroup;
+			children = (
+				438D051325CAD9440073CDE1 /* Date+Extension.swift */,
+				438D052525CBCDB00073CDE1 /* String+Extension.swift */,
+			);
+			path = DateFormat;
 			sourceTree = "<group>";
 		};
 		43A2E7B225BE898700B531DF /* Network */ = {
@@ -355,7 +390,7 @@
 			children = (
 				438D050525CABFE30073CDE1 /* Decoding */,
 				43A2E7D025BE92CB00B531DF /* Service */,
-				43A2E7CF25BE929700B531DF /* Manager */,
+				43A2E7CF25BE929700B531DF /* Response */,
 				43A2E7C725BE8EFD00B531DF /* Encoding */,
 				43A2E7BF25BE8D4700B531DF /* EndPont */,
 			);
@@ -382,12 +417,13 @@
 			path = Encoding;
 			sourceTree = "<group>";
 		};
-		43A2E7CF25BE929700B531DF /* Manager */ = {
+		43A2E7CF25BE929700B531DF /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				43A2E7B325BE89A200B531DF /* NetworkManager.swift */,
+				43A2E7B325BE89A200B531DF /* NetworkResponseHandler.swift */,
+				438D050B25CAC2180073CDE1 /* ResponseHandler.swift */,
 			);
-			path = Manager;
+			path = Response;
 			sourceTree = "<group>";
 		};
 		43A2E7D025BE92CB00B531DF /* Service */ = {
@@ -403,13 +439,11 @@
 			isa = PBXGroup;
 			children = (
 				438D050A25CAC1FE0073CDE1 /* Response */,
-				43E6165F25C7C85B004A839D /* Error */,
 				435B201525C2C2FF00539A40 /* Repository */,
 				43A2E80025BEC4C200B531DF /* EndPiont */,
 				43A2E7FA25BEC46800B531DF /* Client */,
 				43A2E7E525BEAB3600B531DF /* Services */,
-				438D051325CAD9440073CDE1 /* DateFormatter.swift */,
-				438D052525CBCDB00073CDE1 /* String+Extension.swift */,
+				438D053325CC4C560073CDE1 /* DateFormat */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -573,6 +607,15 @@
 			path = AddCoupon;
 			sourceTree = "<group>";
 		};
+		C5740BF0BFD43CA6C3F59BF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A56FFD26CB4667BBD7B6961A /* Pods_Coupons.framework */,
+				8852FF333640054116DD06C1 /* Pods_CouponsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -580,9 +623,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43283F8F25BB0DDC002DDD08 /* Build configuration list for PBXNativeTarget "Coupons" */;
 			buildPhases = (
+				8A0FA9C8474C59AC4BAEF6B0 /* [CP] Check Pods Manifest.lock */,
 				43283F7C25BB0DDB002DDD08 /* Sources */,
 				43283F7D25BB0DDB002DDD08 /* Frameworks */,
 				43283F7E25BB0DDB002DDD08 /* Resources */,
+				438D054125CC4F250073CDE1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -597,6 +642,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 435B206825C2DDC500539A40 /* Build configuration list for PBXNativeTarget "CouponsTests" */;
 			buildPhases = (
+				AA30C29C3032CA919F7E819F /* [CP] Check Pods Manifest.lock */,
 				435B205D25C2DDC500539A40 /* Sources */,
 				435B205E25C2DDC500539A40 /* Frameworks */,
 				435B205F25C2DDC500539A40 /* Resources */,
@@ -667,6 +713,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		438D054125CC4F250073CDE1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		8A0FA9C8474C59AC4BAEF6B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coupons-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA30C29C3032CA919F7E819F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CouponsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43283F7C25BB0DDB002DDD08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -696,7 +806,7 @@
 				43283F9525BB0E16002DDD08 /* AppDelegate.swift in Sources */,
 				43283F8625BB0DDB002DDD08 /* ContentView.swift in Sources */,
 				435B201725C2C31B00539A40 /* Repository.swift in Sources */,
-				438D051425CAD9440073CDE1 /* DateFormatter.swift in Sources */,
+				438D051425CAD9440073CDE1 /* Date+Extension.swift in Sources */,
 				438D050725CAC0270073CDE1 /* JSONDecoder+Extension.swift in Sources */,
 				438D051825CB3CEE0073CDE1 /* JSONEncoder+Extension.swift in Sources */,
 				435B200B25C2B0AA00539A40 /* HomeView.swift in Sources */,
@@ -708,7 +818,7 @@
 				43283F9B25BB0E57002DDD08 /* AppView.swift in Sources */,
 				435B20BE25C5B8B200539A40 /* AdminHomeView.swift in Sources */,
 				43A2E7FC25BEC47600B531DF /* AdminClient.swift in Sources */,
-				43A2E7B425BE89A200B531DF /* NetworkManager.swift in Sources */,
+				43A2E7B425BE89A200B531DF /* NetworkResponseHandler.swift in Sources */,
 				43283FAB25BB0E97002DDD08 /* CouponDetail.swift in Sources */,
 				438D052625CBCDB00073CDE1 /* String+Extension.swift in Sources */,
 				43A2E81325BED0C800B531DF /* CustomerClient.swift in Sources */,
@@ -724,6 +834,7 @@
 				43A2E7D625BE941F00B531DF /* Router.swift in Sources */,
 				43283FC425BB0EF8002DDD08 /* CouponsByCategory.swift in Sources */,
 				43283FC025BB0EF8002DDD08 /* Customer.swift in Sources */,
+				438D055425CD95F00073CDE1 /* ResponseItem.swift in Sources */,
 				43A2E7D225BE92E500B531DF /* NetworkRouter.swift in Sources */,
 				43283F8425BB0DDB002DDD08 /* CouponsApp.swift in Sources */,
 				43A2E81C25BEEB3C00B531DF /* CustomerServiceImp.swift in Sources */,
@@ -878,6 +989,7 @@
 		};
 		43283F9025BB0DDC002DDD08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67733C641B72DC7E8EEE1379 /* Pods-Coupons.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -899,6 +1011,7 @@
 		};
 		43283F9125BB0DDC002DDD08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133D7CEAC0EDCAA57C816D11 /* Pods-Coupons.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -920,6 +1033,7 @@
 		};
 		435B206925C2DDC500539A40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D44EC6FDAE04526659F88D5 /* Pods-CouponsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -940,6 +1054,7 @@
 		};
 		435B206A25C2DDC500539A40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 163B9DA7DCD4910A2067340E /* Pods-CouponsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

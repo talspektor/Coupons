@@ -107,7 +107,7 @@ class AdminServicesTests: XCTestCase {
 
     func testAddCompany() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "test_ios4", email: "test_ios4", password: "test_ios3"/*, coupons: []*/)
+        let company = Company(id: 1, name: "test_ios5", email: "test_ios5", password: "test_ios5")
         AdminServiceImp.shared.addCompany(company: company) { (result) in
             switch result {
             case .success(let isAdded):

@@ -24,12 +24,13 @@ enum HTTPMethod: String {
 }
 
 typealias HTTPHeaders = [String: String]
+typealias QueryParams = [String: String]
 typealias Parameters = [String: Any]
 
 enum HTTPTask {
     case request
     
-    case requestParametest(bodyParameters: Parameters?, urlParanatars: Parameters?)
+    case requestParametest(bodyParameters: Parameters?, urlParanatars: QueryParams?)
     
-    case requestParametersAnyHeaders(bodyParameters: Parameters?, urlParanatars: Parameters?, additionalHeaders: HTTPHeaders?)
+    case requestParametersAnyHeaders(bodyParameters: Parameters?, urlParanatars: QueryParams?, additionalHeaders: HTTPHeaders?)
 }

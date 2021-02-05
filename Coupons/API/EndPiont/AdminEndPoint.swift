@@ -25,6 +25,7 @@ enum AdminEndPoint: EndPointType {
     var baseURL: URL {
         return URL(string: "http://localhost:8080/api")!
     }
+
     var path: String {
         switch self {
         case .login(let email, let password):

@@ -12,8 +12,6 @@ struct CouponsApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let orederCoupon: CustomerObservable = {
         let order = CustomerObservable()
-        order.fetchCoupons()
-        order.fetchMyCoupons()
         return order
     }()
     var body: some Scene {

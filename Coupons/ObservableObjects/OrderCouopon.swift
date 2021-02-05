@@ -16,7 +16,7 @@ class CustomerObservable: ObservableObject {
     @Published var coupons: [CategoryCoupons]?
     @Published var myCouopns: [CategoryCoupons]?
     @Published var orderList = [Coupon]()
-    @Published var useMockData: Bool = true
+    @Published var useMockData: Bool = false
     @Published var isLoggedIn = false
     @Published var selectedType: UserType = UserType.company
     @Published var company: Company?
@@ -50,37 +50,5 @@ class CustomerObservable: ObservableObject {
     func addToMyCoupons(coupon: Coupon) {
         var categoryCouopns = myCouopns?.first { $0.category.rawValue == coupon.categoryId }
         categoryCouopns?.coupons.append(coupon)
-    }
-    //TODO: get coupons from REST API
-    func fetchCoupons() {
-//        if useMockData {
-//            coupons = mockSections
-//        }
-//        CustomerServiceImp.shared.getAllCoupons { result in
-//            switch result {
-//            case .success(let coupons):
-//                ()
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-    }
-    //TODO: get coupons from REST API
-    func fetchMyCoupons() {
-//        if useMockData {
-//            myCouopns = mockSections
-//        }
-//        CustomerServiceImp.shared.getCustomerCoupons { result in
-//            switch result {
-//            case .success(let companies):
-//                ()
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
-        func login(_ email: String, _ password: String) {
-            
-        }
     }
 }
