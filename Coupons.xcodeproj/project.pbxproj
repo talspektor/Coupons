@@ -43,7 +43,11 @@
 		438D051425CAD9440073CDE1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051325CAD9440073CDE1 /* Date+Extension.swift */; };
 		438D051825CB3CEE0073CDE1 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */; };
 		438D052625CBCDB00073CDE1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D052525CBCDB00073CDE1 /* String+Extension.swift */; };
-		438D055425CD95F00073CDE1 /* ResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D055325CD95F00073CDE1 /* ResponseItem.swift */; };
+		438D055425CD95F00073CDE1 /* APIResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D055325CD95F00073CDE1 /* APIResponseItem.swift */; };
+		438D055925CD9BCD0073CDE1 /* AddButon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D055825CD9BCD0073CDE1 /* AddButon.swift */; };
+		438D055D25CD9E000073CDE1 /* BaseAddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D055C25CD9E000073CDE1 /* BaseAddItemView.swift */; };
+		438D056325CEE9EF0073CDE1 /* APIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D056225CEE9EF0073CDE1 /* APIResponseHandler.swift */; };
+		438D056725CEEAEC0073CDE1 /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D056625CEEAEC0073CDE1 /* APIResponseError.swift */; };
 		43A2E7B425BE89A200B531DF /* NetworkResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7B325BE89A200B531DF /* NetworkResponseHandler.swift */; };
 		43A2E7BD25BE8CBB00B531DF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */; };
 		43A2E7C225BE8DD500B531DF /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */; };
@@ -134,7 +138,11 @@
 		438D051325CAD9440073CDE1 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
 		438D052525CBCDB00073CDE1 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		438D055325CD95F00073CDE1 /* ResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseItem.swift; sourceTree = "<group>"; };
+		438D055325CD95F00073CDE1 /* APIResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseItem.swift; sourceTree = "<group>"; };
+		438D055825CD9BCD0073CDE1 /* AddButon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButon.swift; sourceTree = "<group>"; };
+		438D055C25CD9E000073CDE1 /* BaseAddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAddItemView.swift; sourceTree = "<group>"; };
+		438D056225CEE9EF0073CDE1 /* APIResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseHandler.swift; sourceTree = "<group>"; };
+		438D056625CEEAEC0073CDE1 /* APIResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
 		43A2E7B325BE89A200B531DF /* NetworkResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseHandler.swift; sourceTree = "<group>"; };
 		43A2E7BC25BE8CBB00B531DF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -264,6 +272,7 @@
 		43283FA025BB0E68002DDD08 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				438D055725CD9BB30073CDE1 /* General */,
 				43E6165F25C7C85B004A839D /* Error */,
 				43E6167A25C7FCEA004A839D /* Utils */,
 				43E6168525C82742004A839D /* Coupon */,
@@ -371,7 +380,9 @@
 		438D050A25CAC1FE0073CDE1 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				438D055325CD95F00073CDE1 /* ResponseItem.swift */,
+				438D055325CD95F00073CDE1 /* APIResponseItem.swift */,
+				438D056225CEE9EF0073CDE1 /* APIResponseHandler.swift */,
+				438D056625CEEAEC0073CDE1 /* APIResponseError.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -383,6 +394,15 @@
 				438D052525CBCDB00073CDE1 /* String+Extension.swift */,
 			);
 			path = DateFormat;
+			sourceTree = "<group>";
+		};
+		438D055725CD9BB30073CDE1 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				438D055825CD9BCD0073CDE1 /* AddButon.swift */,
+				438D055C25CD9E000073CDE1 /* BaseAddItemView.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		43A2E7B225BE898700B531DF /* Network */ = {
@@ -822,6 +842,7 @@
 				43283FAB25BB0E97002DDD08 /* CouponDetail.swift in Sources */,
 				438D052625CBCDB00073CDE1 /* String+Extension.swift in Sources */,
 				43A2E81325BED0C800B531DF /* CustomerClient.swift in Sources */,
+				438D055D25CD9E000073CDE1 /* BaseAddItemView.swift in Sources */,
 				43E6166125C7C88D004A839D /* ErrorFetchDataAlertView.swift in Sources */,
 				43283FC225BB0EF8002DDD08 /* Company.swift in Sources */,
 				43A2E7CD25BE91B200B531DF /* JSONParameterEncoder.swift in Sources */,
@@ -833,13 +854,16 @@
 				43A2E80A25BEC71700B531DF /* CustomerEndPoint.swift in Sources */,
 				43A2E7D625BE941F00B531DF /* Router.swift in Sources */,
 				43283FC425BB0EF8002DDD08 /* CouponsByCategory.swift in Sources */,
+				438D056725CEEAEC0073CDE1 /* APIResponseError.swift in Sources */,
+				438D056325CEE9EF0073CDE1 /* APIResponseHandler.swift in Sources */,
 				43283FC025BB0EF8002DDD08 /* Customer.swift in Sources */,
-				438D055425CD95F00073CDE1 /* ResponseItem.swift in Sources */,
+				438D055425CD95F00073CDE1 /* APIResponseItem.swift in Sources */,
 				43A2E7D225BE92E500B531DF /* NetworkRouter.swift in Sources */,
 				43283F8425BB0DDB002DDD08 /* CouponsApp.swift in Sources */,
 				43A2E81C25BEEB3C00B531DF /* CustomerServiceImp.swift in Sources */,
 				43283FB425BB0EC8002DDD08 /* OrderView.swift in Sources */,
 				438D050C25CAC2180073CDE1 /* ResponseHandler.swift in Sources */,
+				438D055925CD9BCD0073CDE1 /* AddButon.swift in Sources */,
 				43B0A6AB25BC7A7700C3AC08 /* CustomerDetailsView.swift in Sources */,
 				43B0A6B225BC7B8100C3AC08 /* CompanyItemView.swift in Sources */,
 				43A2E82225BEF02D00B531DF /* CompanyServiceImp.swift in Sources */,

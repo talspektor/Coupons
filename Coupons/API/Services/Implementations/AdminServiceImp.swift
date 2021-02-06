@@ -13,9 +13,9 @@ struct AdminServiceImp: AdminService {
     
     let client = AdminCilent()
     
-    func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void) {
+    func login(email: String, password: String, completion: @escaping (Result<APIResponseItem<Bool>, Error>) -> Void) {
         client.router.request(.login(email, password)) { responseItem in
-            ResponseHandler.handle(responseItem) { (result) in
+            ResponseHandler.handleWithDecoding(APIResponseItem<Bool>.self, responseItem) { (result) in
                 completion(result)
             }
         }

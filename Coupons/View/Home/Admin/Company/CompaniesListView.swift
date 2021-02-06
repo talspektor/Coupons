@@ -20,8 +20,7 @@ struct CompaniesListView: View {
                     }
                 }.navigationTitle("Companies")
                 .listStyle(GroupedListStyle())
-            }
-            
+            }            
         }
     }
 }

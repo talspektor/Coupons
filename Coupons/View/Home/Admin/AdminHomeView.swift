@@ -34,7 +34,7 @@ struct AdminHomeView: View {
             } else {
                 ErrorFetchDataAlertView(title: "No Data", message: "No companies and no customers, Admin can add compnies and customers", buttonTest: "Dismiss")
             }
-            
+            AddButon(nextView: AddCouponView())
         }.onAppear {
             self.viewModel.useMockData = app.useMockData
             self.viewModel.getComapnies()

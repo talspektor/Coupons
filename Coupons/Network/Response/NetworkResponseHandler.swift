@@ -42,15 +42,15 @@ enum NetworkResponse: Error {
 struct NetworkResponseHandler {
 
     enum Result<String> {
-        case success
+        case success(String)
         case failure(String)
     }
 
     static func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<NetworkResponse> {
         switch response.statusCode {
-        case 200...299: return .success
+        case 200...299: return .success(NetworkResponse.success)
         case 401...500: return .failure(NetworkResponse.authenticationError)
-        case 501...599: return .failure(NetworkResponse.badRequest)
+        case 501...599: return .success(NetworkResponse.badRequest)
         case 600: return .failure(NetworkResponse.outdated)
         default: return .failure(NetworkResponse.failed)
         }

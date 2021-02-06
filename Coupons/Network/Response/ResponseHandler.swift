@@ -48,8 +48,8 @@ struct ResponseHandler {
             }
             do {
                 let apiResponse = try JSONDecoder().decode(with: T.self, from: responseData)
-                completion(.success(apiResponse))
                 print("\n<<<<< Response JSON: \(apiResponse)\n")
+                completion(.success(apiResponse))
             } catch {
                 print(error)
                 completion(.failure(error))

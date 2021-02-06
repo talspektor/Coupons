@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ClientService {
-    func login(email: String, password: String, completion: @escaping (Result<Bool, Error>) -> Void)
+    func login(email: String, password: String, completion: @escaping (Result<APIResponseItem<Bool>, Error>) -> Void)
 }

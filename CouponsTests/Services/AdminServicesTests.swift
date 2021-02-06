@@ -19,8 +19,8 @@ class AdminServicesTests: XCTestCase {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.login(email: "com.admin@admin", password: "admin") { (result) in
             switch result {
-            case .success(let isLoggedIn):
-                assert(isLoggedIn, "Loggedin: \(isLoggedIn)")
+            case .success(let responseItem):
+                assert(responseItem.date, "Loggedin: \(responseItem.date)")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Login fail error: \(error)")

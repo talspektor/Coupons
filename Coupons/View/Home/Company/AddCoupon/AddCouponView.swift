@@ -42,16 +42,13 @@ struct AddCouponView: View {
                     Text("Submit")
                         .font(.title3)
                 }
-                
             }
             if viewModel.shouldShowAlert {
                 ErrorFetchDataAlertView(title: "Fail..",
                                         message: "Cant add coupon",
                                         buttonTest: "Dismiss")
             }
-            
         }
-        
     }
 }
 

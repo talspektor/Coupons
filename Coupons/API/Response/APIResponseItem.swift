@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResponseItem<T> {
-    let data: T?
-    let error: Error?
+struct APIResponseItem<T: Decodable>: Decodable {
+    let date: T
+    let message: String?
 }
