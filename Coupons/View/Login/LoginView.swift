@@ -91,8 +91,10 @@ struct LoginView: View {
                             Repository.shared.login(withEmail: email, andPassword: password, forUser: self.user.selectedType) { result in
                                 switch result {
                                 case .success(let responseItem):
-                                    DispatchQueue.main.async {
-                                        self.user.isLoggedIn = responseItem.date
+                                    if let data = responseItem.date {
+                                        DispatchQueue.main.async {
+                                            self.user.isLoggedIn = data
+                                        }
                                     }
                                 case .failure(let error):
                                     print(error)

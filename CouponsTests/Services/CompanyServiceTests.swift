@@ -20,7 +20,8 @@ class CompanyServiceTests: XCTestCase {
         CompanyServiceImp.shared.login(email: "company_2@mail.com", password: "pass_1") { (result) in
             switch result {
             case .success(let responseItem):
-                assert(responseItem.date, "Loggedin: \(responseItem.date)")
+                assert(responseItem.date != nil)
+                assert(responseItem.date!, "Loggedin: \(responseItem.date!)")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Login fail error: \(error)")

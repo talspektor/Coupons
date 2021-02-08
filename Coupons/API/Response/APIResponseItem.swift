@@ -8,6 +8,6 @@
 import Foundation
 
 struct APIResponseItem<T: Decodable>: Decodable {
-    let date: T
+    let date: T?
     let message: String?
 }

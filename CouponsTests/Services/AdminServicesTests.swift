@@ -20,7 +20,8 @@ class AdminServicesTests: XCTestCase {
         AdminServiceImp.shared.login(email: "com.admin@admin", password: "admin") { (result) in
             switch result {
             case .success(let responseItem):
-                assert(responseItem.date, "Loggedin: \(responseItem.date)")
+                assert(responseItem.date != nil)
+                assert(responseItem.date!, "Loggedin: \(responseItem.date!)")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Login fail error: \(error)")
@@ -34,8 +35,8 @@ class AdminServicesTests: XCTestCase {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.getCompanies { (result) in
             switch result {
-            case .success:
-                assert(true, "Get Companies")
+            case .success(let response):
+                assert(response.date != nil, "Get Companies")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Get Companies fail error: \(error)")
@@ -107,11 +108,11 @@ class AdminServicesTests: XCTestCase {
 
     func testAddCompany() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 1, name: "test_ios5", email: "test_ios5", password: "test_ios5")
+        let company = Company(id: 1, name: "test_ios8", email: "test_ios8", password: "test_ios8")
         AdminServiceImp.shared.addCompany(company: company) { (result) in
             switch result {
-            case .success(let isAdded):
-                assert(isAdded, "Add company")
+            case .success(let response):
+                assert(response.message == nil, "Add company")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Add company fail: \(error)")
@@ -123,11 +124,11 @@ class AdminServicesTests: XCTestCase {
 
     func testAddCustomer() {
         let expectation = XCTestExpectation()
-        let customer = Customer(id: 1, firstName: "test_ios3", lastName: "test_ios3", email: "test_ios3", password: "test_ios3")
+        let customer = Customer(id: 1, firstName: "test_ios5", lastName: "test_ios5", email: "test_ios5", password: "test_ios5")
         AdminServiceImp.shared.addCustomer(customer: customer) { (result) in
             switch result {
-            case .success(let isCustomerAdded):
-                assert(isCustomerAdded, "Add customer")
+            case .success(let response):
+                assert(response.date != nil, "Add customer")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Add customer fail: \(error)")
@@ -139,11 +140,11 @@ class AdminServicesTests: XCTestCase {
 
     func testUpdateCustomer() {
         let expectation = XCTestExpectation()
-        let customer = Customer(id: 18, firstName: "test_ios11", lastName: "test_ios11", email: "test_ios10", password: "test_ios10")
+        let customer = Customer(id: 18, firstName: "test_iosU1", lastName: "test_iosU1", email: "test_iosU1", password: "test_iosU1")
         AdminServiceImp.shared.updateCustomer(customer: customer) { (result) in
             switch result {
-            case .success(let isCustomerUpdated):
-                assert(isCustomerUpdated, "update customer")
+            case .success(let response):
+                assert(response.date != nil, "update customer")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "update customer fail: \(error)")
@@ -158,8 +159,8 @@ class AdminServicesTests: XCTestCase {
         let company = Company(id: 30, name: "test_ios11", email: "test_ios11", password: "test_ios1")
         AdminServiceImp.shared.updateCompany(company: company) { (result) in
             switch result {
-            case .success(let isCompanyUpdated):
-                assert(isCompanyUpdated, "update cumpany")
+            case .success(let response):
+                assert(response.date != nil, "update cumpany")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "update cumpany fail: \(error)")
@@ -171,10 +172,10 @@ class AdminServicesTests: XCTestCase {
 
     func testDeleteComapny() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.deleteCompany(id: 28) { (result) in
+        AdminServiceImp.shared.deleteCompany(id: 29) { (result) in
             switch result {
-            case .success(let isDeleted):
-                assert(isDeleted, "delete company")
+            case .success(let response):
+                assert(response.date != nil, "delete company")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "delete company fail: \(error)")
@@ -188,8 +189,8 @@ class AdminServicesTests: XCTestCase {
         let expectation = XCTestExpectation()
         AdminServiceImp.shared.deleteCustomer(id: 17) { (result) in
             switch result {
-            case .success(let isDeleted):
-                assert(isDeleted, "delete company")
+            case .success(let response):
+                assert(response.date != nil, "delete company")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "delete company fail: \(error)")

@@ -24,8 +24,8 @@ extension AdminHomeView {
                 service.getCompanies { [weak self] (result) in
                     DispatchQueue.main.async {
                         switch result {
-                        case .success(let companies):
-                            self?.companies = companies
+                        case .success(let response):
+                            self?.companies = response.date
                         case .failure:
                             self?.shouldShowAlert = true
                         }
@@ -42,8 +42,8 @@ extension AdminHomeView {
                 service.getCustomers { [weak self] (result) in
                     DispatchQueue.main.async {
                         switch result {
-                        case .success(let customers):
-                            self?.customers = customers
+                        case .success(let response):
+                            self?.customers = response.date
                         case .failure:
                             self?.shouldShowAlert = true
                         }

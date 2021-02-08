@@ -33,29 +33,33 @@ struct ResponseHandler {
             completion(.failure(responseItem.error!))
             return
         }
-        guard let response = responseItem.response as? HTTPURLResponse else {
-            print("\n<<<<< Error: \(responseItem.error!)\n")
+//        guard let response = responseItem.response as? HTTPURLResponse else {
+//            print("\n<<<<< Error: \(responseItem.error!)\n")
+//            completion(.failure(responseItem.error!))
+//            return
+//        }
+//        let result = NetworkResponseHandler.handleNetworkResponse(response)
+        guard let responseData = responseItem.data else {
             completion(.failure(responseItem.error!))
             return
         }
-        
-        let result = NetworkResponseHandler.handleNetworkResponse(response)
-        switch result {
-        case .success:
-            guard let responseData = responseItem.data else {
-                completion(.failure(NetworkResponse.noData))
-                return
-            }
-            do {
-                let apiResponse = try JSONDecoder().decode(with: T.self, from: responseData)
-                print("\n<<<<< Response JSON: \(apiResponse)\n")
-                completion(.success(apiResponse))
-            } catch {
-                print(error)
-                completion(.failure(error))
-            }
-        case .failure(let error):
+        do {
+            let apiResponse = try JSONDecoder().decode(with: T.self, from: responseData)
+            print("\n<<<<< Response JSON: \(apiResponse)\n")
+            completion(.success(apiResponse))
+        } catch {
+            print(error)
             completion(.failure(error))
         }
+//        switch result {
+//        case .success:
+//            guard let responseData = responseItem.data else {
+//                completion(.failure(responseItem.error))
+//                return
+//            }
+
+//        case .failure(let error):
+//            completion(.failure(error))
+//        }
     }
 }
