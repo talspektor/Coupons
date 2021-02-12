@@ -19,9 +19,8 @@ class CustomerServiceTests: XCTestCase {
         let expectation = XCTestExpectation()
         CustomerServiceImp.shared.login(email: "customer_1@email.com", password: "pass_1") { (result) in
             switch result {
-            case .success(let responseItem):
-                assert(responseItem.date != nil)
-                assert(responseItem.date!, "Loggedin: \(responseItem.date!)")
+            case .success(let isLoggedin):
+                assert(isLoggedin, "Loggedin")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Login fail error: \(error)")
@@ -63,10 +62,10 @@ class CustomerServiceTests: XCTestCase {
 
     func testPurchaseCoupon() {
         let expectation = XCTestExpectation()
-        CustomerServiceImp.shared.purchaseCoupon(id: 15) { (result) in
+        CustomerServiceImp.shared.purchaseCoupon(id: 27) { (result) in
             switch result {
-            case .success(let isPurchased):
-                assert(isPurchased, "purchase coupon")
+            case .success:
+                assert(true, "purchase coupon")
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "purchase coupon fali: \(error)")
@@ -78,7 +77,7 @@ class CustomerServiceTests: XCTestCase {
     
     func testGetCouponsByCategory() {
         let expectation = XCTestExpectation()
-        CustomerServiceImp.shared.getCoupons(categoty: .ELECTRICITY) { (result) in
+        CustomerServiceImp.shared.getCoupons(categoty: .FOOD) { (result) in
             switch result {
             case .success:
                 assert(true, "get couponsByCategory")

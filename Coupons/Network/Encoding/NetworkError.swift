@@ -12,4 +12,5 @@ enum NetworkError: String, Error {
     case encodingFailed = "Parameter encoding failed."
     case missingURL = "URL is nil."
     case mustByEncodable = "mustByEncodable"
+    case nissingData = "nissingData"
 }

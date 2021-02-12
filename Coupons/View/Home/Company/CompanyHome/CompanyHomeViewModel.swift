@@ -31,7 +31,6 @@ extension ComapnyHameView {
                     DispatchQueue.main.async {
                         switch result {
                         case .success(let company):
-                            self?.company = company
                             completion(company)
                         case .failure:
                             self?.shouldShowAlert = true
@@ -67,10 +66,8 @@ extension ComapnyHameView {
                 service.addCoupon(coupon: coupon) { [weak self] (result) in
                     DispatchQueue.main.async {
                         switch result {
-                        case .success(let isAdded):
-                            if isAdded {
-                                self?.getCoupons()
-                            }
+                        case .success:
+                            break
                         case .failure:
                             self?.shouldShowAlert = true
                         }

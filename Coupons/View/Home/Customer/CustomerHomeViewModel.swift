@@ -27,7 +27,7 @@ extension CustomerHomeView {
                     DispatchQueue.main.async {
                         switch result {
                         case .success(let coupons):
-                        self?.userCategoryCoupons = Utils.formatCouponsData(coupons: coupons)
+                            self?.userCategoryCoupons = Utils.formatCouponsData(coupons: coupons)
                         case .failure:
                             self?.shouldShowAlert = true
                         }

@@ -57,8 +57,8 @@ extension AddCouponView {
                     guard let coupon = self?.coupon else { return }
                     self?.service.addCoupon(coupon: coupon) { (result) in
                         switch result {
-                        case .success(let isAdded):
-                            self?.sholdDismiss = isAdded
+                        case .success:
+                            self?.sholdDismiss = true
                         case .failure:
                             self?.shouldShowAlert = true
                         }

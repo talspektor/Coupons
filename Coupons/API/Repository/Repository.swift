@@ -11,7 +11,7 @@ struct Repository {
     
     static let shared = Repository()
     
-    func login(withEmail email: String, andPassword password: String, forUser user: UserType, completion: @escaping (Result<APIResponseItem<Bool>, Error>) -> Void) {
+    func login(withEmail email: String, andPassword password: String, forUser user: UserType, completion: @escaping (Result<Bool, Error>) -> Void) {
         switch user {
         case .admin:
             AdminServiceImp.shared.login(email: email, password: password) { result in

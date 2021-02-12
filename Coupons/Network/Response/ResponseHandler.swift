@@ -40,7 +40,7 @@ struct ResponseHandler {
 //        }
 //        let result = NetworkResponseHandler.handleNetworkResponse(response)
         guard let responseData = responseItem.data else {
-            completion(.failure(responseItem.error!))
+            completion(.failure(NetworkError.nissingData))
             return
         }
         do {

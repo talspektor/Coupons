@@ -431,8 +431,8 @@
 				43A2E7C425BE8E7B00B531DF /* NetworkError.swift */,
 				43A2E7C125BE8DD500B531DF /* ParameterEncoder.swift */,
 				43A2E7C825BE8F1D00B531DF /* URLParameterEncoder.swift */,
-				43A2E7CC25BE91B200B531DF /* JSONParameterEncoder.swift */,
 				438D051725CB3CEE0073CDE1 /* JSONEncoder+Extension.swift */,
+				43A2E7CC25BE91B200B531DF /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
 			sourceTree = "<group>";
