@@ -9,28 +9,47 @@ import SwiftUI
 
 struct CheckoutView: View {
     @EnvironmentObject var order: CustomerObservable
-    static let paymentTypes = ["Credit", "PayPal", "Bit"]
-    @State private var pamenType = 0
+    @State private var paymenType = "Credit"
+    @State private var showPurchaseConfirmationAlert = false
+
+    let paymentTypes = ["Credit", "PayPal", "Bit"]
+
+    var totlatPrice: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+
+        let total = Double(order.total)
+
+        return formatter.string(from: NSNumber(value: total)) ?? "$0"
+    }
     
     var body: some View {
         Form {
             Section {
                 Picker("How do you want to pay?",
-                       selection: $pamenType) {
-                    ForEach(0 ..< Self.paymentTypes.count) {
-                        Text(Self.paymentTypes[$0])
+                       selection: $paymenType) {
+                    ForEach(paymentTypes, id: \.self) {
+                        Text($0)
                     }
                 }
             }
             
-            Section(header: Text("Total: $\(order.total, specifier: "%.2f")")) {
+            Section(header: Text("Total: $\(order.total)")) {
                 Button("Confirm order") {
+                    //TODO:
                     // palce the order
+                    // call servise to purchase coupon
                 }
             }
             
-        }.navigationBarTitle("Payment")
+        }
+        .navigationBarTitle("Payment")
         .navigationBarTitleDisplayMode(.inline)
+        .alert(isPresented: $showPurchaseConfirmationAlert) {
+            Alert(title: Text("Order confirm"),
+                  message: Text("Your total was \(totlatPrice)"),
+                  dismissButton: .default(Text("OK")))
+        }
     }
 }
 

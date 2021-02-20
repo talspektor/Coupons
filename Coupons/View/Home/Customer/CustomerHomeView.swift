@@ -19,20 +19,17 @@ struct CustomerHomeView: View {
                     if let allCategoryCoupons = viewModel.allCategoryCoupons {
                         CouponsListView(sections: allCategoryCoupons, title: "All Coupons", isForOrder: true)
                             .tabItem {
-                                Image(systemName: "🛍️")
-                                Text("Coupons")
+                                Label("Coupons", image: "🛍️")
                             }
                         OrderView()
                             .tabItem {
-                                Image(systemName: "square.and.pencil")
-                                Text("Order")
+                                Label("Order", systemImage: "square.and.pencil")
                             }
                     }
                     if let categoryCoupons = viewModel.userCategoryCoupons {
                         CouponsListView(sections: categoryCoupons, title: "My Coupons", isForOrder: false)
                             .tabItem {
-                                Image(systemName: "star.fill")
-                                Text("My Coupons")
+                                Label("My Coupons", systemImage: "star.fill")
                             }
                     }
                     

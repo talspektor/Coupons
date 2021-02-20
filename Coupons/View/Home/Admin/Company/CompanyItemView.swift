@@ -10,10 +10,12 @@ import SwiftUI
 struct CompanyItemView: View {
     let company: Company
     var body: some View {
-        VStack {
-            Text("Name: \(company.name)")
-        }
-        
+        NavigationLink(
+            destination: CompanyDetailsView(company: company)) {
+            VStack {
+                Text("Company Name: \(company.name)")
+            }
+        }   
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 extension AdminHomeView {
     class AdminHomeViewModel: ObservableObject {
@@ -13,11 +14,12 @@ extension AdminHomeView {
         @Published private(set) var companies: [Company]?
         @Published private(set) var customers: [Customer]?
         @Published private(set) var shouldShowAlert = false
+        @Published private(set) var errorMessage: String = ""
         var useMockData = false
         
         private let service = AdminServiceImp.shared
         
-        func getComapnies() {
+        func getComapnies(completion: @escaping (Bool) -> Void) {
             if useMockData {
                 companies = [randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany]
             } else {
@@ -26,8 +28,10 @@ extension AdminHomeView {
                         switch result {
                         case .success(let companies):
                             self?.companies = companies
-                        case .failure:
-                            self?.shouldShowAlert = true
+                            completion(false)
+                        case .failure(let error):
+                            self?.errorMessage = error.localizedDescription
+                            completion(true)
                         }
                     }
                 }
@@ -35,7 +39,7 @@ extension AdminHomeView {
             
         }
         
-        func getCustomers() {
+        func getCustomers(completion: @escaping (Bool) -> Void) {
             if useMockData {
                 customers = [randomCustomer, randomCustomer, randomCustomer, randomCustomer, randomCustomer, randomCustomer, randomCustomer]
             } else {
@@ -44,8 +48,10 @@ extension AdminHomeView {
                         switch result {
                         case .success(let customer):
                             self?.customers = customer
-                        case .failure:
-                            self?.shouldShowAlert = true
+                            completion(false)
+                        case .failure(let error):
+                            self?.errorMessage = error.localizedDescription
+                            completion(true)
                         }
                     }
                 }

@@ -14,6 +14,7 @@ struct CouponsApp: App {
         let order = CustomerObservable()
         return order
     }()
+    
     var body: some Scene {
         WindowGroup {
             AppView()

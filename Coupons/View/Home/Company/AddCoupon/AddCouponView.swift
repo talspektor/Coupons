@@ -23,8 +23,8 @@ struct AddCouponView: View {
                     .font(.title)
                 TextField("Title", text: $viewModel.title)
                 Picker("Category", selection: $viewModel.coupon.categoryId) {
-                    ForEach(0..<self.categories.count) {
-                        Text(self.categories[$0].rawValue)
+                    ForEach(categories, id: \.self) {
+                        Text($0.rawValue)
                     }.pickerStyle(SegmentedPickerStyle())
                 }
                 TextField("Description", text: $viewModel.description)

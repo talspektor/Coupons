@@ -38,6 +38,8 @@
 		435B20BA25C5B87800539A40 /* CustomerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B20B925C5B87800539A40 /* CustomerHomeView.swift */; };
 		435B20BE25C5B8B200539A40 /* AdminHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B20BD25C5B8B200539A40 /* AdminHomeView.swift */; };
 		435B20C225C5B8D700539A40 /* ComapnyHameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435B20C125C5B8D700539A40 /* ComapnyHameView.swift */; };
+		4388CCDE25DADD7400C24539 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388CCDD25DADD7400C24539 /* LoginViewModel.swift */; };
+		4388CCE225DB996100C24539 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388CCE125DB996100C24539 /* HomeViewModel.swift */; };
 		438D050725CAC0270073CDE1 /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D050625CAC0270073CDE1 /* JSONDecoder+Extension.swift */; };
 		438D050C25CAC2180073CDE1 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D050B25CAC2180073CDE1 /* ResponseHandler.swift */; };
 		438D051425CAD9440073CDE1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D051325CAD9440073CDE1 /* Date+Extension.swift */; };
@@ -133,6 +135,8 @@
 		435B20B925C5B87800539A40 /* CustomerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeView.swift; sourceTree = "<group>"; };
 		435B20BD25C5B8B200539A40 /* AdminHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeView.swift; sourceTree = "<group>"; };
 		435B20C125C5B8D700539A40 /* ComapnyHameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComapnyHameView.swift; sourceTree = "<group>"; };
+		4388CCDD25DADD7400C24539 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4388CCE125DB996100C24539 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		438D050625CAC0270073CDE1 /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
 		438D050B25CAC2180073CDE1 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		438D051325CAD9440073CDE1 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				435B200A25C2B0AA00539A40 /* HomeView.swift */,
+				4388CCE125DB996100C24539 /* HomeViewModel.swift */,
 				43E6169125C828EA004A839D /* Admin */,
 				43E6167325C7FBF2004A839D /* Customer */,
 				43E6166A25C7CE8A004A839D /* Company */,
@@ -522,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				43A2E83825C2847100B531DF /* LoginView.swift */,
+				4388CCDD25DADD7400C24539 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -830,6 +836,7 @@
 				438D050725CAC0270073CDE1 /* JSONDecoder+Extension.swift in Sources */,
 				438D051825CB3CEE0073CDE1 /* JSONEncoder+Extension.swift in Sources */,
 				435B200B25C2B0AA00539A40 /* HomeView.swift in Sources */,
+				4388CCE225DB996100C24539 /* HomeViewModel.swift in Sources */,
 				43B0A6AF25BC7A9200C3AC08 /* CompanyDetailsView.swift in Sources */,
 				43283FB325BB0EC8002DDD08 /* CheckoutView.swift in Sources */,
 				43A2E7F125BEAF6200B531DF /* CompanyService.swift in Sources */,
@@ -846,6 +853,7 @@
 				43E6166125C7C88D004A839D /* ErrorFetchDataAlertView.swift in Sources */,
 				43283FC225BB0EF8002DDD08 /* Company.swift in Sources */,
 				43A2E7CD25BE91B200B531DF /* JSONParameterEncoder.swift in Sources */,
+				4388CCDE25DADD7400C24539 /* LoginViewModel.swift in Sources */,
 				43E616C725C8611C004A839D /* AddCouponView.swift in Sources */,
 				43283FC125BB0EF8002DDD08 /* Category.swift in Sources */,
 				43A2E83925C2847100B531DF /* LoginView.swift in Sources */,

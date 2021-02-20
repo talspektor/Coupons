@@ -24,15 +24,13 @@ struct ComapnyHameView: View {
                         CouponsListView(sections: categoryCoupons, title: "Coupons", isForOrder: false)
                             .onAppear() { self.viewModel.getCoupons() }
                             .tabItem {
-                                Image(systemName: "star.fill")
-                                Text("Coupons")
+                                Label("Coupons", systemImage: "star.fill")
                             }
                     }
                     if let company = viewModel.company {
                         CompanyDetailsView(company: company)
                             .tabItem {
-                                Image(systemName: "star.fill")
-                                Text("Info")
+                                Label("Info", systemImage: "star.fill")
                             }
                     }
                 }.onAppear {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var user: CustomerObservable
+
     var body: some View {
         NavigationView {
             switch user.selectedType {
